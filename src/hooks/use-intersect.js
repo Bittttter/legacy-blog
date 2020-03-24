@@ -5,11 +5,13 @@ export default ({ root = null, rootMargin, threshold = 0 } = {}) => {
   const [node, setNode] = useState(null);
 
   const observer = useRef(
-    new window.IntersectionObserver(([ent]) => updateEntry(ent), {
-      root,
-      rootMargin,
-      threshold,
-    })
+    typeof window !== `undefined`
+      ? new window.IntersectionObserver(([ent]) => updateEntry(ent), {
+          root,
+          rootMargin,
+          threshold,
+        })
+      : null
   );
 
   useEffect(() => {

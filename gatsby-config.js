@@ -9,7 +9,7 @@ const siteMetadata = {
   siteLocale: `en_us`,
   twitterUsername: `@imleihuang`,
   author: `Lei Huang`,
-  favicon: `./static/favicon.ico`,
+  favicon: `./static/android-chrome-512x512.png`,
   keywords: ['frontend', 'JavaScript', 'React', 'CSS'],
 };
 
