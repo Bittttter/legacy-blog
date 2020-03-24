@@ -1,0 +1,11 @@
+[build]
+  command = "npm run build"
+  functions = 'functions'
+  publish = "public"
+[build.environment]
+  NODE_VERSION = "10.13.0"
+
+[[redirects]]
+  from = '/api/*'
+  to = '/.netlify/functions/:splat'
+  status = 200

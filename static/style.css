@@ -1,0 +1,15 @@
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+
+body {
+  transition: background 0.5s linear, color 0.5s linear;
+}
+
+.js-loading *,
+.js-loading *:before,
+.js-loading *:after {
+  -webkit-animation-play-state: paused !important;
+  animation-play-state: paused !important;
+}

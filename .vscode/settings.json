@@ -1,0 +1,27 @@
+{
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#ffd133",
+    "activityBar.activeBackground": "#ffd133",
+    "activityBar.activeBorder": "#009f7b",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#009f7b",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "titleBar.activeBackground": "#ffc600",
+    "titleBar.inactiveBackground": "#ffc60099",
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.inactiveForeground": "#15202b99",
+    "statusBar.background": "#ffc600",
+    "statusBarItem.hoverBackground": "#cc9e00",
+    "statusBar.foreground": "#15202b"
+  },
+  "peacock.color": "#FFC600",
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "node_modules": true
+  }
+}
