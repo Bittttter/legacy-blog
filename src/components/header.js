@@ -25,6 +25,7 @@ const Header = () => {
       sx={{
         justifyItems: 'center',
         mb: 5,
+        pt: 3,
       }}>
       <Flex
         sx={{
@@ -35,7 +36,7 @@ const Header = () => {
         <Link to="/" aria-label="site logo">
           <Logo
             sx={{
-              width: [250, 380],
+              width: [200, 300],
               path: {
                 fill: 'primary',
               },

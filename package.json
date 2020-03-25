@@ -7,14 +7,10 @@
     "develop": "gatsby develop -p 9988 -o",
     "build": "gatsby build",
     "serve": "gatsby serve -p 9500 -o",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "analyze": "ANALYZE_BUNDLE_SIZE=true gatsby build"
   },
-  "keywords": [
-    "gatsby",
-    "blog",
-    "react",
-    "react hooks"
-  ],
+  "keywords": ["gatsby", "blog", "react", "react hooks"],
   "author": "",
   "license": "ISC",
   "dependencies": {

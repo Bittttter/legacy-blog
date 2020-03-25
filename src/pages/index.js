@@ -25,7 +25,7 @@ const Home = ({ data }) => {
           '@media screen and (min-width: 1200px)': {
             opacity: 0,
             transform: 'translateY(10rem)',
-            animation: `${showArticles.toString()} 1s ease-in-out .6s forwards`,
+            animation: `${showArticles.toString()} .8s ease .6s forwards`,
           },
         }}>
         {posts.map(post => (

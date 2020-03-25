@@ -23,37 +23,37 @@ const showText = keyframes`
   }
 `;
 
-const bounceInDown = keyframes`
-    from,
-    60%,
-    75%,
-    90%,
-    to {
-      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    }
+// const bounceInDown = keyframes`
+//     from,
+//     60%,
+//     75%,
+//     90%,
+//     to {
+//       animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+//     }
 
-    0% {
-      opacity: 0;
-      transform: translate3d(0, -1000px, 0);
-    }
+//     0% {
+//       opacity: 0;
+//       transform: translate3d(0, -1000px, 0);
+//     }
 
-    60% {
-      opacity: 1;
-      transform: translate3d(0, 25px, 0);
-    }
+//     60% {
+//       opacity: 1;
+//       transform: translate3d(0, 25px, 0);
+//     }
 
-    75% {
-      transform: translate3d(0, -10px, 0);
-    }
+//     75% {
+//       transform: translate3d(0, -10px, 0);
+//     }
 
-    90% {
-      transform: translate3d(0, 5px, 0);
-    }
+//     90% {
+//       transform: translate3d(0, 5px, 0);
+//     }
 
-    to {
-      transform: translate3d(0, 0, 0);
-    }
-`;
+//     to {
+//       transform: translate3d(0, 0, 0);
+//     }
+// `;
 
 export const MainBio = props => {
   return (
@@ -86,9 +86,9 @@ export const MainBio = props => {
                 backgroundClip: 'content-box, border-box',
                 mb: [3, 0],
                 mr: [0, 4, 4],
-                animationName: bounceInDown.toString(),
-                animationDuration: '1s',
-                animationFillMode: 'both',
+                // animationName: bounceInDown.toString(),
+                // animationDuration: '1s',
+                // animationFillMode: 'both',
               }}
               alt="Profile image of Lei Huang"
             />
@@ -96,7 +96,7 @@ export const MainBio = props => {
               sx={{
                 flex: 1,
                 opacity: 0,
-                animation: `${showText.toString()} 1s ease-in-out forwards`,
+                animation: `${showText.toString()} .8s ease-in-out forwards`,
               }}>
               <Text variant="heading">
                 Hello!{' '}
