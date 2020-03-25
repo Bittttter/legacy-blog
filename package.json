@@ -9,7 +9,12 @@
     "serve": "gatsby serve -p 9500 -o",
     "clean": "gatsby clean"
   },
-  "keywords": ["gatsby", "blog", "react", "react hooks"],
+  "keywords": [
+    "gatsby",
+    "blog",
+    "react",
+    "react hooks"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -26,14 +31,18 @@
     "gatsby-plugin-feed": "^2.3.29",
     "gatsby-plugin-manifest": "^2.2.48",
     "gatsby-plugin-mdx": "^1.0.83",
+    "gatsby-plugin-netlify": "^2.2.1",
+    "gatsby-plugin-netlify-cache": "^1.2.0",
     "gatsby-plugin-offline": "^3.0.41",
     "gatsby-plugin-react-helmet": "^3.1.24",
+    "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-robots-txt": "^1.5.0",
     "gatsby-plugin-sharp": "^2.4.13",
     "gatsby-plugin-sitemap": "^2.2.30",
     "gatsby-plugin-theme-ui": "^0.3.0",
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-plugin-webpack-bundle-analyzer": "^1.0.5",
+    "gatsby-remark-autolink-headers": "^2.2.1",
     "gatsby-remark-code-titles": "^1.1.0",
     "gatsby-remark-copy-linked-files": "^2.1.40",
     "gatsby-remark-external-links": "0.0.4",

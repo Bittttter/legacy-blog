@@ -11,6 +11,8 @@ const siteMetadata = {
   author: `Lei Huang`,
   favicon: `./static/android-chrome-512x512.png`,
   keywords: ['frontend', 'JavaScript', 'React', 'CSS'],
+  themeColor: '#2b7a78',
+  backgroundColor: '#feffff',
 };
 
 module.exports = {
@@ -24,6 +26,15 @@ module.exports = {
     `@pauliescanlon/gatsby-mdx-embed`,
     `gatsby-plugin-theme-ui`,
     `gatsby-plugin-emotion`,
+    `gatsby-remark-autolink-headers`,
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /assets/,
+        },
+      },
+    },
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
@@ -94,7 +105,7 @@ module.exports = {
         start_url: `/`,
         background_color: siteMetadata.backgroundColor,
         theme_color: siteMetadata.themeColor,
-        display: `standalone`,
+        display: `minimal-ui`,
         icon: siteMetadata.favicon,
       },
     },
@@ -173,5 +184,7 @@ module.exports = {
         },
       },
     },
+    `gatsby-plugin-netlify-cache`,
+    `gatsby-plugin-netlify`, // must be last
   ],
 };

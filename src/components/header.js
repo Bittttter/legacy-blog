@@ -32,20 +32,7 @@ const Header = () => {
           alignItems: 'center',
           pt: [2, 3],
         }}>
-        <Link to="/">
-          {/* <Text
-            variant="logo"
-            sx={{
-              background: props =>
-                `linear-gradient(150deg, ${props.colors.primary}, ${props.colors.secondary}, ${props.colors.highlight})`,
-              color: 'transparent',
-              WebkitBackgroundClip: 'text',
-              backgroundClip: 'text',
-              opacity: 0,
-              animation: `${show.toString()} 1.4s ease .6s forwards`,
-            }}>
-            leihuang.dev
-          </Text> */}
+        <Link to="/" aria-label="site logo">
           <Logo
             sx={{
               width: [250, 380],

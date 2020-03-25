@@ -118,7 +118,8 @@ export const MainBio = props => {
                     key={kind}
                     href={url}
                     target="_blank"
-                    rel="noopener">
+                    rel="noopener"
+                    aria-label={`navigate to my ${kind} page`}>
                     <Icon />
                   </NavLink>
                 ))}

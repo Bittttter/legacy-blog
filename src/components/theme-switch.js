@@ -19,7 +19,8 @@ export default function Switch(props) {
       }}
       onClick={e => {
         setColorMode(colorMode === 'dark' ? 'default' : 'dark');
-      }}>
+      }}
+      aria-label="switch theme">
       <FaSun
         sx={{
           color: 'text',
