@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { Link as GatsbyLink } from 'gatsby';
 import { jsx, Text, Link } from 'theme-ui';
-import { capitalize, getColorByTag } from '../utils';
+import { getColorByTag } from '../utils';
 
 export const Tag = ({ children, url, ...props }) => {
   const { backgroundColor, color } = getColorByTag(children);
@@ -13,7 +13,7 @@ export const Tag = ({ children, url, ...props }) => {
       backgroundColor={backgroundColor}
       color={color}>
       <Text as="span" {...props}>
-        {capitalize(children)}
+        {children}
       </Text>
     </Link>
   );
