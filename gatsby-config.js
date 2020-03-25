@@ -25,12 +25,6 @@ module.exports = {
     `gatsby-plugin-theme-ui`,
     `gatsby-plugin-emotion`,
     {
-      resolve: `gatsby-plugin-layout`,
-      options: {
-        component: require.resolve(`./src/components/layout.js`),
-      },
-    },
-    {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [`.mdx`, `.md`],

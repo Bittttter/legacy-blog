@@ -1,9 +1,9 @@
 /** @jsx jsx */
-import { jsx, Container, Box, Heading, Text, Link } from 'theme-ui';
+import { jsx, Box, Heading, Text, Link } from 'theme-ui';
 import { keyframes } from '@emotion/core';
 import { graphql, Link as GatsbyLink } from 'gatsby';
 import Image from 'gatsby-image';
-import { Tag, MainBio } from '@components';
+import { Tag, MainBio, Layout } from '@components';
 
 const showArticles = keyframes`
   to {
@@ -15,14 +15,10 @@ const showArticles = keyframes`
 const Home = ({ data }) => {
   const { nodes: posts } = data.allMdx;
   return (
-    <Container
-      variant="article"
-      sx={{
-        p: 3,
-        '& > div:not(:first-of-type)': {
-          mt: [4, 5],
-        },
-      }}>
+    <Layout
+      description="Lei Huang is a frontend developer from China. He specializes in web development and web design."
+      title="Lei Huang"
+      pathname="/">
       <MainBio mt={5} mb={4} />
       <Box
         sx={{
@@ -37,7 +33,7 @@ const Home = ({ data }) => {
         </Text>
         <hr />
         {posts.map(post => (
-          <Box key={post.id}>
+          <Box key={post.id} mt={4}>
             <Link as={GatsbyLink} to={post.fields.slug}>
               <Heading
                 as="h2"
@@ -77,7 +73,7 @@ const Home = ({ data }) => {
           </Box>
         ))}
       </Box>
-    </Container>
+    </Layout>
   );
 };
 

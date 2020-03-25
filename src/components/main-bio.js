@@ -77,6 +77,7 @@ export const MainBio = props => {
             <Image
               fixed={data.avatar.childImageSharp.fixed}
               sx={{
+                width: '25rem',
                 borderRadius: '50%',
                 border: 'double .6rem transparent',
                 backgroundImage: t =>

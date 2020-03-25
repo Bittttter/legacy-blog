@@ -1,21 +1,32 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import { Fragment } from 'react';
+import { jsx, Container, Box } from 'theme-ui';
 import { MDXProvider } from '@mdx-js/react';
 import SEO from './SEO';
 import Header from './header';
 import Footer from './footer';
-import { SEOInfoProvider } from '../hooks/use-seo';
 
-export default function Layout({ children }) {
+export function Layout({
+  children,
+  description,
+  title,
+  image,
+  pathname,
+  article,
+}) {
   return (
-    <Fragment>
-      <SEOInfoProvider>
-        <SEO />
-        <Header />
+    <Box>
+      <SEO
+        description={description}
+        title={title}
+        image={image}
+        pathname={pathname}
+        article={article}
+      />
+      <Header />
+      <Container px={3}>
         <MDXProvider>{children}</MDXProvider>
         <Footer />
-      </SEOInfoProvider>
-    </Fragment>
+      </Container>
+    </Box>
   );
 }

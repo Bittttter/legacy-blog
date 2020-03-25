@@ -1,21 +1,16 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
-import { useSEO } from '../hooks/use-seo';
 
-export default function SEO() {
-  const [SEOInfo] = useSEO();
-
-  const {
-    description,
-    lang = 'en',
-    meta = [],
-    title,
-    image,
-    pathname = '/',
-    article = false,
-  } = SEOInfo;
-
+export default function SEO({
+  description,
+  lang = 'en',
+  meta = [],
+  title,
+  image,
+  pathname = '/',
+  article = false,
+}) {
   const { site } = useStaticQuery(
     graphql`
       query {

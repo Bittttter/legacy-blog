@@ -9,7 +9,12 @@
     "serve": "gatsby serve -p 9500 -o",
     "clean": "gatsby clean"
   },
-  "keywords": ["gatsby", "blog", "react", "react hooks"],
+  "keywords": [
+    "gatsby",
+    "blog",
+    "react",
+    "react hooks"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -24,7 +29,6 @@
     "gatsby-image": "^2.2.45",
     "gatsby-plugin-emotion": "^4.1.25",
     "gatsby-plugin-feed": "^2.3.29",
-    "gatsby-plugin-layout": "^1.2.0",
     "gatsby-plugin-manifest": "^2.2.48",
     "gatsby-plugin-mdx": "^1.0.83",
     "gatsby-plugin-offline": "^3.0.41",

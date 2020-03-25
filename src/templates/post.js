@@ -8,13 +8,11 @@ import {
   Flex,
   Link,
 } from 'theme-ui';
-import { Fragment, useEffect } from 'react';
 import { graphql, Link as GatsbyLink } from 'gatsby';
 import Image from 'gatsby-image';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import { Tag, ScrollToTop } from '@components';
+import { Tag, ScrollToTop, Layout } from '@components';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
-import { useSEO } from '../hooks/use-seo';
 // import {
 //   useCurrentInViewport,
 //   CurrentInViewportProvider,
@@ -77,8 +75,6 @@ import { useSEO } from '../hooks/use-seo';
 // };
 
 export default function PostLayout({ data, pageContext }) {
-  const [, setSEOInfo] = useSEO();
-
   const {
     frontmatter,
     body,
@@ -86,41 +82,34 @@ export default function PostLayout({ data, pageContext }) {
     excerpt,
   } = data.mdx;
 
-  const { title, date, cover, tags } = frontmatter;
+  const { title, date, cover, tags, coverCredit } = frontmatter;
   const { previous, next } = pageContext;
 
-  useEffect(() => {
-    setSEOInfo({
-      description: excerpt,
-      title,
-      image: cover.publicURL,
-      pathname: slug,
-      article: true,
-    });
-  }, []);
-
   return (
-    <Fragment>
-      <Container p={[3, 4]} variant="article">
-        <Heading as="h2" my={2}>
-          {title}
-        </Heading>
-        <Text variant="timestamp">{date}</Text>
-        <Box
-          mt={3}
-          sx={{
-            width: '100%',
-            'a:not(:first-of-type)': {
-              ml: 3,
-            },
-          }}>
-          {tags.map(tag => (
-            <Tag key={tag} url={`/tag/${tag}`}>
-              {tag}
-            </Tag>
-          ))}
-        </Box>
-      </Container>
+    <Layout
+      description={excerpt}
+      title={title}
+      image={cover.publicURL}
+      pathname={slug}
+      article={true}>
+      <Heading as="h2" my={2}>
+        {title}
+      </Heading>
+      <Text variant="timestamp">{date}</Text>
+      <Box
+        mt={3}
+        sx={{
+          width: '100%',
+          'a:not(:first-of-type)': {
+            ml: 3,
+          },
+        }}>
+        {tags.map(tag => (
+          <Tag key={tag} url={`/tag/${tag}`}>
+            {tag}
+          </Tag>
+        ))}
+      </Box>
       <Image
         fluid={cover.childImageSharp.fluid}
         alt="cover image"
@@ -129,9 +118,10 @@ export default function PostLayout({ data, pageContext }) {
           width: '100%',
         }}
       />
-      <Container px={[3, 4]} variant="article">
-        <MDXRenderer>{body}</MDXRenderer>
-      </Container>
+      <Text sx={{ fontSize: 3, textAlign: 'right', color: 'grey' }}>
+        {coverCredit}
+      </Text>
+      <MDXRenderer>{body}</MDXRenderer>
       <Flex
         sx={{
           mt: 4,
@@ -170,7 +160,7 @@ export default function PostLayout({ data, pageContext }) {
         }}>
         <ScrollToTop />
       </Flex>
-    </Fragment>
+    </Layout>
   );
 }
 
@@ -192,6 +182,7 @@ export const query = graphql`
         title
         date(formatString: "YYYY MMMM Do")
         tags
+        coverCredit
         cover {
           publicURL
           childImageSharp {

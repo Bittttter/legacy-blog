@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import {
   jsx,
-  Container,
   Text,
   Box,
   Heading,
@@ -9,17 +8,16 @@ import {
   Styled,
   Link,
 } from 'theme-ui';
+import { graphql } from 'gatsby';
 import Image from 'gatsby-image';
-import { Circle, Line } from '@components';
+import { Circle, Line, Layout } from '@components';
 import { useEffect, useState } from 'react';
 import useIntersect from '../hooks/use-intersect';
 import { techSkills, toolsProficiency } from '../constants/skills';
-import { useSEO } from '../hooks/use-seo';
 
 const About = ({ data }) => {
   const [animateBar, setAnimateBar] = useState(false);
   const [barChartRef, barChartEnt] = useIntersect({ threshold: 0.4 });
-  const [, setSEOInfo] = useSEO();
 
   useEffect(() => {
     if (barChartEnt.intersectionRatio > 0) {
@@ -27,19 +25,12 @@ const About = ({ data }) => {
     }
   }, [barChartEnt]);
 
-  useEffect(() => {
-    setSEOInfo({
-      description:
-        'Lei Huang is a frontend developer from China. He specializes in web development and web design.',
-      title: 'About Lei Huang',
-      image: data.avatar.publicURL,
-      pathname: '/about/',
-      article: false,
-    });
-  }, []);
-
   return (
-    <Container p={3}>
+    <Layout
+      description="Lei Huang is a frontend developer from China. He specializes in web development and web design."
+      title="About Lei Huang"
+      image={data.avatar.publicURL}
+      pathname="/about/">
       <Text
         sx={{
           fontSize: [8, 9],
@@ -140,7 +131,7 @@ const About = ({ data }) => {
           />
         ))}
       </Box>
-    </Container>
+    </Layout>
   );
 };
 
