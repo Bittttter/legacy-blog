@@ -14,9 +14,8 @@ export default {
   fonts: {
     body:
       'Nunito, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif',
-    heading: '"Lucida Grande", serif',
-    monospace: '"Hack", monospace',
-    logo: 'Satisfy',
+    heading: 'Neuton, serif',
+    monospace: '"Source Code Pro", monospace',
   },
   fontSizes: [
     0,
@@ -127,7 +126,7 @@ export default {
       fontFamily: 'heading',
       lineHeight: 'heading',
       fontWeight: 'heading',
-      fontSize: [4, 5],
+      fontSize: [5, 6],
     },
     h3: {
       color: 'text',
@@ -167,7 +166,7 @@ export default {
         fontFamily: 'monospace',
         backgroundColor: 'muted',
         p: 1,
-        fontSize: 2,
+        fontSize: 3,
         borderRadius: '6px',
       },
     },

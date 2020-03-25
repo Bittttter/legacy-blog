@@ -168,14 +168,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
-        custom: {
-          families: ['Hack'],
-          urls: [
-            'https://cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack-subset.css',
-          ],
-        },
         google: {
-          families: ['Nunito', 'Satisfy'],
+          families: ['Neuton', 'Nunito', 'Source Code Pro'],
         },
       },
     },

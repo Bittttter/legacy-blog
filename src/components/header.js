@@ -4,6 +4,7 @@ import { keyframes } from '@emotion/core';
 import { Link } from 'gatsby';
 import { FaExternalLinkAlt } from 'react-icons/fa';
 import Switch from './theme-switch';
+import Logo from './logo';
 
 const bg = keyframes`
     to {
@@ -23,6 +24,7 @@ const Header = () => {
       columns={[1, 1, 2]}
       sx={{
         justifyItems: 'center',
+        mb: 5,
       }}>
       <Flex
         sx={{
@@ -30,37 +32,8 @@ const Header = () => {
           alignItems: 'center',
           pt: [2, 3],
         }}>
-        <Link
-          to="/"
-          sx={{
-            position: 'relative',
-            display: 'block',
-            backgroundColor: 'background',
-            textDecoration: 'none',
-            width: ['19rem', '28rem'],
-            height: ['6rem', '10rem'],
-            textAlign: 'center',
-            verticalAlign: 'middle',
-            py: [2, 3],
-            px: 3,
-            my: [3, 4],
-            '&:after': {
-              content: '""',
-              display: 'block',
-              position: 'absolute',
-              top: '-5px',
-              left: '-5px',
-              right: '-5px',
-              bottom: '-5px',
-              background: props =>
-                `linear-gradient(150deg, ${props.colors.primary}, ${props.colors.secondary}, ${props.colors.highlight})`,
-              backgroundSize: '0% 0%',
-              backgroundRepeat: 'no-repeat',
-              animation: `${bg.toString()} 1.4s ease 0.3s forwards`,
-              zIndex: -1,
-            },
-          }}>
-          <Text
+        <Link to="/">
+          {/* <Text
             variant="logo"
             sx={{
               background: props =>
@@ -72,7 +45,15 @@ const Header = () => {
               animation: `${show.toString()} 1.4s ease .6s forwards`,
             }}>
             leihuang.dev
-          </Text>
+          </Text> */}
+          <Logo
+            sx={{
+              width: [250, 380],
+              path: {
+                fill: 'primary',
+              },
+            }}
+          />
         </Link>
       </Flex>
       <Flex

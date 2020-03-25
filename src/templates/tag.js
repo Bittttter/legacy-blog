@@ -13,7 +13,7 @@ export default ({ data, pageContext }) => {
       article={false}>
       <Heading as="h1">
         Posts with tag{' '}
-        <span sx={{ color: 'highlight' }}>{pageContext.tag}</span>:
+        <span sx={{ color: 'secondary' }}>{pageContext.tag}</span>:
       </Heading>
       <hr />
       <Box mt={4}>

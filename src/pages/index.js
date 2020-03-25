@@ -19,7 +19,7 @@ const Home = ({ data }) => {
       description="Lei Huang is a frontend developer from China. He specializes in web development and web design."
       title="Lei Huang"
       pathname="/">
-      <MainBio mt={5} mb={4} />
+      <MainBio mb={[5, 6]} />
       <Box
         sx={{
           '@media screen and (min-width: 1200px)': {
@@ -28,10 +28,6 @@ const Home = ({ data }) => {
             animation: `${showArticles.toString()} 1s ease-in-out .6s forwards`,
           },
         }}>
-        <Text sx={{ fontSize: [7, 8], fontWeight: 'heading' }}>
-          Recent posts:
-        </Text>
-        <hr />
         {posts.map(post => (
           <Box key={post.id} mt={4}>
             <Link as={GatsbyLink} to={post.fields.slug}>
