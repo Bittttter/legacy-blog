@@ -127,7 +127,7 @@ const Readings = () => {
                     sx={{
                       opacity: 0,
                       transform: 'translate3d(0,-5rem,0)',
-                      animation: `${fadeInArticles.toString()} 1s ease-out ${index *
+                      animation: `${fadeInArticles.toString()} .8s ease-out ${index *
                         0.3}s forwards`,
                     }}>
                     <PostCard {...post} />

@@ -125,11 +125,11 @@ export const MainBio = props => {
                 ))}
               </Flex>
               <Text variant="body" mt={3}>
-                I taught myself programming and eventually made it my
-                career a few years ago. I have two years of fulltime
-                working experience as a front-end developer, including
-                one year at Alipay. Before that, I was a content
-                marketing specialist at a sales company.
+                I taught myself programming and made it my career a
+                few years ago. I have two years of fulltime working
+                experience as a front-end developer, including one
+                year at Alipay. Before that, I was a content marketing
+                specialist at a sales company.
               </Text>
               <Text variant="body" mt={2}>
                 I constantly seek opportunities to learn and to hone

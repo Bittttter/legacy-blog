@@ -61,6 +61,13 @@ module.exports = {
           {
             resolve: 'gatsby-remark-code-titles',
           },
+          {
+            resolve: '@weknow/gatsby-remark-codepen',
+            options: {
+              theme: 'dark',
+              height: 450,
+            },
+          },
         ],
         rehypePlugins: [
           // require(`./plugins/rehype-sections`),

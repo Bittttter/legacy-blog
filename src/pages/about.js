@@ -1,13 +1,5 @@
 /** @jsx jsx */
-import {
-  jsx,
-  Text,
-  Box,
-  Heading,
-  Grid,
-  Styled,
-  Link,
-} from 'theme-ui';
+import { jsx, Text, Box, Heading, Grid } from 'theme-ui';
 import { graphql } from 'gatsby';
 import Image from 'gatsby-image';
 import { Circle, Line, Layout } from '@components';
@@ -53,40 +45,23 @@ const About = ({ data }) => {
       </Box>
       <Text as="p" variant="emphasis">
         I'm Lei Huang, a frontend engineer from China. I taught myself
-        programming and eventually made it my career a few years ago.
-        I have two years of fulltime working experience as a front-end
-        developer, including one year at Alipay. Before that, I was a
-        content marketing specialist at a sales company.
+        programming and made it my career a few years ago. I have two
+        years of fulltime working experience as a front-end developer,
+        including one year at Alipay. Before that, I was a content
+        marketing specialist at a sales company.
       </Text>
       <Text as="p" variant="emphasis">
         My main focus is user experience and web performance. For now,
         I mostly work with JavaScript and React to build web apps. But
-        I also dabble in web design. I'm improving my proficiency on
-        design systems and JAMstack at the moment.
+        I also dabble in web design. I focus on design systems and
+        JAMstack at the moment.
       </Text>
       <Text as="p" variant="emphasis">
-        Although JavaScript is the language I use the most, Haskell is
-        my favorite. Writing denotative code gives me a sense of
-        elevation. It's an experience I don't get from writing
-        JavaScript. Sometimes I choose to be impractical to appreciate
-        the beauty of the universe...
-      </Text>
-      <Styled.blockquote>
-        <Styled.p sx={{ fontSize: [5, 6] }}>
-          Like the concept of brunch, Clojure is so elegant that it’s
-          difficult to tell anyone anything about it without somehow
-          improving them.
-        </Styled.p>
-      </Styled.blockquote>
-      <Text as="p" variant="emphasis">
-        This quote from{' '}
-        <Link
-          href="https://www.braveclojure.com/"
-          target="_blank"
-          rel="noopener">
-          Clojure for the Brave and True
-        </Link>{' '}
-        speaks to my heart about functional programming.
+        Apart from writing JavaScript for work, I also love to write
+        Haskell for recreational purposes. Writing denotative code
+        gives me a sense of elevation. It's an experience I don't get
+        from writing imperative JavaScript code. Sometimes I choose to
+        be impractical to appreciate the beauty of the universe...
       </Text>
       <Box
         sx={{

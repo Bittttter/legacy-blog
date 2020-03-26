@@ -25,7 +25,7 @@ export const techSkills = [
     color: '#f1e05a',
   },
   {
-    skill: 'Node',
+    skill: 'Node.js',
     percentage: 60,
     color: '#3C873A',
   },

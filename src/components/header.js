@@ -1,22 +1,22 @@
 /** @jsx jsx */
-import { jsx, Text, Flex, Grid, NavLink } from 'theme-ui';
-import { keyframes } from '@emotion/core';
+import { jsx, Flex, Grid, NavLink } from 'theme-ui';
+// import { keyframes } from '@emotion/core';
 import { Link } from 'gatsby';
 import { FaExternalLinkAlt } from 'react-icons/fa';
 import Switch from './theme-switch';
 import Logo from './logo';
 
-const bg = keyframes`
-    to {
-        background-size: 100% 100%;
-    }
-`;
+// const bg = keyframes`
+//     to {
+//         background-size: 100% 100%;
+//     }
+// `;
 
-const show = keyframes`
-    to {
-      opacity: 1;
-    }
-`;
+// const show = keyframes`
+//     to {
+//       opacity: 1;
+//     }
+// `;
 
 const Header = () => {
   return (

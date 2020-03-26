@@ -66,7 +66,7 @@ export const Circle = ({
         onUpdate: val => setPercent(val),
       });
     }
-  }, [cardEntry, percentage]);
+  }, [cardEntry, percentage, animate]);
   return (
     <Flex
       {...props}

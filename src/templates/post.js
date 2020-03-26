@@ -1,13 +1,5 @@
 /** @jsx jsx */
-import {
-  jsx,
-  Box,
-  Heading,
-  Text,
-  Container,
-  Flex,
-  Link,
-} from 'theme-ui';
+import { jsx, Box, Heading, Text, Flex, Link } from 'theme-ui';
 import { graphql, Link as GatsbyLink } from 'gatsby';
 import Image from 'gatsby-image';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
