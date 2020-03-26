@@ -116,7 +116,7 @@ export const pageQuery = graphql`
       publicURL
       childImageSharp {
         fluid(maxWidth: 900) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
     }
