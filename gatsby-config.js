@@ -1,4 +1,5 @@
 require(`dotenv`).config();
+const { createProxyMiddleware } = require('http-proxy-middleware');
 
 const siteMetadata = {
   title: `Lei Huang`,
@@ -194,4 +195,15 @@ module.exports = {
     `gatsby-plugin-netlify-cache`,
     `gatsby-plugin-netlify`, // must be last
   ],
+  developMiddleware: app => {
+    app.use(
+      '/.netlify/functions/',
+      createProxyMiddleware({
+        target: 'http://localhost:9000',
+        pathRewrite: {
+          '/.netlify/functions/': '',
+        },
+      })
+    );
+  },
 };

@@ -5,17 +5,17 @@
   "main": "index.js",
   "scripts": {
     "develop": "gatsby develop -p 9988 -o",
-    "build": "gatsby build",
+    "start": "run-p start:**",
+    "start:app": "npm run develop",
+    "start:lambda": "netlify-lambda serve src/functions",
+    "build": "gatsby build && netlify-lambda build src/functions",
+    "build:app": "gatsby build",
+    "build:lambda": "netlify-lambda build src/functions",
     "serve": "gatsby serve -p 9500 -o",
     "clean": "gatsby clean",
     "analyze": "ANALYZE_BUNDLE_SIZE=true gatsby build"
   },
-  "keywords": [
-    "gatsby",
-    "blog",
-    "react",
-    "react hooks"
-  ],
+  "keywords": ["gatsby", "blog", "react", "react hooks"],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -57,8 +57,11 @@
     "geoip-lite": "^1.4.1",
     "google-spreadsheet": "^3.0.10",
     "hast-util-heading": "^1.0.4",
+    "http-proxy-middleware": "^1.0.3",
     "mdx-utils": "^0.2.0",
+    "netlify-lambda": "^1.6.3",
     "normalize.css": "^8.0.1",
+    "npm-run-all": "^4.1.5",
     "prism-react-renderer": "^1.0.2",
     "prismjs": "^1.19.0",
     "react": "^16.13.0",
