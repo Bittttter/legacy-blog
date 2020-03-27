@@ -4,6 +4,7 @@ import { graphql, StaticQuery } from 'gatsby';
 import { keyframes } from '@emotion/core';
 import Image from 'gatsby-image';
 import SOCIAL from '../constants/social';
+import { TypeWriter } from './typewriter';
 
 const mainBioQuery = graphql`
   query MainBioQuery {
@@ -99,12 +100,21 @@ export const MainBio = props => {
                 animation: `${showText.toString()} .8s ease-in-out forwards`,
               }}>
               <Text variant="heading">
-                Hello!{' '}
+                Hello! This is{' '}
                 <Text as="span" color="primary">
                   Lei Huang
-                </Text>{' '}
-                is a front-end developer, life hacker, and avid
-                learner.
+                </Text>
+                <Text>
+                  I'm{' '}
+                  <TypeWriter
+                    sx={{ display: 'inline-block' }}
+                    words={[
+                      'a front-end developer...',
+                      'a life hacker...',
+                      'an avid learner.',
+                    ]}
+                  />
+                </Text>
               </Text>
               <Flex
                 mt={2}

@@ -34,7 +34,7 @@ loader.load(id => {
   require(`prismjs/components/prism-${id}.min.js`);
 });
 
-const Code = props => {
+export const Code = props => {
   const [colorMode] = useColorMode();
   const codeProps = preToCodeBlock(props);
 
@@ -115,5 +115,3 @@ const Code = props => {
     </Highlight>
   );
 };
-
-export default Code;

@@ -185,11 +185,14 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
     {
-      resolve: 'gatsby-plugin-web-font-loader',
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
-        google: {
-          families: ['Neuton', 'Nunito', 'Source Code Pro'],
-        },
+        fonts: [
+          `Lora\:400,400i,500,500i,600,600i,700,700i`,
+          `Nunito`,
+          `Source Code Pro`,
+        ],
+        display: 'swap',
       },
     },
     `gatsby-plugin-netlify-cache`,

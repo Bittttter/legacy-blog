@@ -15,7 +15,12 @@
     "clean": "gatsby clean",
     "analyze": "ANALYZE_BUNDLE_SIZE=true gatsby build"
   },
-  "keywords": ["gatsby", "blog", "react", "react hooks"],
+  "keywords": [
+    "gatsby",
+    "blog",
+    "react",
+    "react hooks"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -31,6 +36,7 @@
     "gatsby-image": "^2.2.45",
     "gatsby-plugin-emotion": "^4.1.25",
     "gatsby-plugin-feed": "^2.3.29",
+    "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-manifest": "^2.2.48",
     "gatsby-plugin-mdx": "^1.0.83",
     "gatsby-plugin-netlify": "^2.2.1",
@@ -70,6 +76,8 @@
     "react-icons": "^3.9.0",
     "react-live": "^2.2.2",
     "rehype-accessible-emojis": "^0.3.2",
+    "rxjs": "^6.5.4",
+    "rxjs-hooks": "^0.6.2",
     "theme-ui": "^0.3.1",
     "wretch": "^1.7.1"
   }

@@ -14,7 +14,7 @@ export default {
   fonts: {
     body:
       'Nunito, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif',
-    heading: 'Neuton, serif',
+    heading: 'Lora, serif',
     monospace: '"Source Code Pro", monospace',
   },
   fontSizes: [
@@ -67,11 +67,6 @@ export default {
       fontSize: 6,
       fontWeight: 'heading',
     },
-    logo: {
-      fontSize: [7, 8],
-      fontFamily: 'logo',
-      fontWeight: 'bold',
-    },
   },
   links: {
     nav: {
@@ -92,6 +87,7 @@ export default {
   colors: {
     text: '#17252a',
     background: '#feffff',
+    highlightBg: 'rgb(251, 251, 251)',
     primary: '#2b7a78',
     secondary: '#d83f87',
     highlight: '#3aafa9',
@@ -101,6 +97,7 @@ export default {
       dark: {
         text: '#fff',
         background: '#011',
+        highlightBg: 'rgb(1, 22, 39)',
         primary: '#0fc',
         secondary: '#f0c',
         highlight: '#0cf',
@@ -133,14 +130,14 @@ export default {
       fontFamily: 'heading',
       lineHeight: 'heading',
       fontWeight: 'heading',
-      fontSize: 4,
+      fontSize: 5,
     },
     h4: {
       color: 'text',
       fontFamily: 'heading',
       lineHeight: 'heading',
       fontWeight: 'heading',
-      fontSize: 3,
+      fontSize: 4,
     },
     h5: {
       color: 'text',
@@ -220,11 +217,24 @@ export default {
       maxWidth: '100%',
     },
     blockquote: {
-      borderLeft: t => `8px solid ${t.colors.primary}`,
+      borderLeft: t => `4px solid ${t.colors.primary}`,
       paddingLeft: 3,
       marginRight: 0,
-      marginLeft: [3, 4],
-      fontStyle: 'italic',
+      marginBlockStart: 0,
+      marginBlockEnd: 0,
+      marginInlineStart: 0,
+      marginInlineEnd: 0,
+      // width: ['100%', '100%', '140%'],
+      // marginLeft: [0, 0, '50%'],
+      // transform: [null, null, 'translateX(-50%)'],
+      // my: [3, 4],
+      p: {
+        fontFamily: 'heading',
+        fontStyle: 'italic',
+        fontSize: 5,
+        // lineHeight: ['3rem', '3.5rem'],
+        fontWeight: 500,
+      },
     },
     ul: {
       m: 0,
