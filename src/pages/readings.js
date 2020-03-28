@@ -11,6 +11,7 @@ import {
 import { graphql, StaticQuery } from 'gatsby';
 import GatsbyImage from 'gatsby-image';
 import { useState, useEffect } from 'react';
+import useInfiniteScroll from '../hooks/use-infinite-scroll';
 import wretch from 'wretch';
 import { keyframes } from '@emotion/core';
 import { Loader, Layout } from '@components';
@@ -77,71 +78,93 @@ const fadeInArticles = keyframes`
 `;
 
 const Readings = () => {
+  const [hasNextPage, setHasNextPage] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [posts, setPosts] = useState([]);
-  const [totalPages, setTotalPages] = useState(null);
-  useEffect(() => {
-    const controller = new AbortController();
+  const [pageNo, setPageNo] = useState(1);
+
+  const controller = new AbortController();
+  function handleLoadMore() {
+    setLoading(true);
     wretch('/api/telegram-feeds/')
+      .query({ pageNo })
       .signal(controller)
       .get()
-      .json(res => {
-        const { feeds, totalPages } = res;
-        setPosts(feeds);
-        setTotalPages(totalPages);
+      .json(data => {
+        setLoading(false);
+        setHasNextPage(!data.isLastPage);
+        setPosts([...posts, ...data.feeds]);
+        setPageNo(pageNo + 1);
       })
-      .catch(() => {});
+      .catch(e => {
+        console.log(e);
+      });
+  }
+
+  const infiniteRef = useInfiniteScroll({
+    loading,
+    hasNextPage,
+    onLoadMore: handleLoadMore,
+  });
+
+  useEffect(() => {
     return () => controller.abort();
-  }, []);
+  }, [controller]);
 
   return (
     <Layout>
-      {posts.length ? (
-        <StaticQuery
-          query={channelProfileQuery}
-          render={data => (
-            <Container px={3} mt={4}>
-              <Flex mt={4}>
-                <GatsbyImage
-                  fixed={data.avatar.childImageSharp.fixed}
-                  sx={{ borderRadius: '50%', mr: [3, 4] }}
-                />
-                <Box sx={{ flex: 1 }}>
-                  <Link
-                    variant="styles.a"
-                    sx={{ fontSize: 4 }}
-                    target="_blank"
-                    rel="noopener"
-                    href="https://t.me/bibliotherapy2/">
-                    Bibliotherapy
-                  </Link>
-                  <Text variant="body" sx={{ mt: 2 }}>
-                    Synched from a Telegram channel where I post
-                    excerpts or my notes on books I've recently read.
-                  </Text>
-                </Box>
-              </Flex>
-              {posts.map((post, index) => {
-                return (
-                  <Box
-                    key={post._rowNumber}
-                    sx={{
-                      opacity: 0,
-                      transform: 'translate3d(0,-5rem,0)',
-                      animation: `${fadeInArticles.toString()} .8s ease-out ${index *
-                        0.3}s forwards`,
-                    }}>
-                    <PostCard {...post} />
+      <div ref={infiniteRef}>
+        {posts.length ? (
+          <StaticQuery
+            query={channelProfileQuery}
+            render={data => (
+              <Container px={3} mt={4}>
+                <Flex mt={4}>
+                  <GatsbyImage
+                    fixed={data.avatar.childImageSharp.fixed}
+                    sx={{ borderRadius: '50%', mr: [3, 4] }}
+                  />
+                  <Box sx={{ flex: 1 }}>
+                    <Link
+                      variant="styles.a"
+                      sx={{ fontSize: 4 }}
+                      target="_blank"
+                      rel="noopener"
+                      href="https://t.me/bibliotherapy2/">
+                      Bibliotherapy
+                    </Link>
+                    <Text variant="body" sx={{ mt: 2 }}>
+                      Synched from a Telegram channel where I post
+                      excerpts or my notes on books I've recently
+                      read.
+                    </Text>
                   </Box>
-                );
-              })}
-            </Container>
-          )}
-        />
-      ) : (
-        <Flex my={6} sx={{ justifyContent: 'center' }}>
-          <Loader />
-        </Flex>
-      )}
+                </Flex>
+              </Container>
+            )}
+          />
+        ) : null}
+        {posts.map((post, index) => {
+          return (
+            <Box
+              key={post.Link}
+              sx={{
+                opacity: 0,
+                transform: 'translate3d(0,-5rem,0)',
+                animation: `${fadeInArticles.toString()} .6s ease-out ${(index %
+                  10) *
+                  0.3}s forwards`,
+              }}>
+              <PostCard {...post} />
+            </Box>
+          );
+        })}
+        {loading ? (
+          <Flex sx={{ justifyContent: 'center', mt: 4 }}>
+            <Loader />
+          </Flex>
+        ) : null}
+      </div>
     </Layout>
   );
 };

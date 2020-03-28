@@ -54,9 +54,9 @@ exports.handler = async (event, ctx) => {
   return {
     statusCode: 200,
     body: JSON.stringify({
-      title: doc.title,
       totalPages,
       feeds,
+      isLastPage: pageNo >= totalPages,
     }),
   };
 };
