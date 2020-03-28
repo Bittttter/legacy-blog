@@ -83,7 +83,11 @@ const Readings = () => {
   const [posts, setPosts] = useState([]);
   const [pageNo, setPageNo] = useState(1);
 
-  const controller = new AbortController();
+  let controller;
+  if (typeof window !== 'undefined') {
+    controller = new AbortController();
+  }
+
   function handleLoadMore() {
     setLoading(true);
     wretch('/api/telegram-feeds/')
