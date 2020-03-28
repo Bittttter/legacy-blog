@@ -194,7 +194,9 @@ export const Line = ({ skill, percentage, animate, ...props }) => {
             width: `${percentage}%`,
             transform: 'translateX(-100%)',
             opacity: 0,
-            animation: `${title.toString()} 1.5s ease forwards`,
+            ...(animate && {
+              animation: `${title.toString()} 1.4s ease forwards`,
+            }),
           }}>
           <Text
             sx={{
@@ -213,7 +215,9 @@ export const Line = ({ skill, percentage, animate, ...props }) => {
           backgroundColor: '#eee',
           transform: 'scaleX(0)',
           transformOrigin: 'top left',
-          animation: `${lineProgress.toString()} 1.5s ease-in-out forwards`,
+          ...(animate && {
+            animation: `${lineProgress.toString()} 1.4s ease-in-out forwards`,
+          }),
         }}>
         <Box
           sx={{
@@ -225,7 +229,7 @@ export const Line = ({ skill, percentage, animate, ...props }) => {
             background: t =>
               `linear-gradient(90deg, ${t.colors.text}, ${t.colors.secondary})`,
             ...(animate && {
-              animation: `${lineProgress.toString()} 1.5s cubic-bezier(.09,.57,.59,1.21) forwards`,
+              animation: `${lineProgress.toString()} 1.4s cubic-bezier(.09,.57,.59,1.21) forwards`,
             }),
           }}></Box>
       </Box>
