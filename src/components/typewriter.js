@@ -1,7 +1,14 @@
 /** @jsx jsx */
 import { jsx, Text } from 'theme-ui';
-import { from, interval, concat } from 'rxjs';
-import { map, take, repeat, concatMap, delay } from 'rxjs/operators';
+import { from, interval, concat, of } from 'rxjs';
+import {
+  map,
+  take,
+  repeat,
+  delay,
+  concatMap,
+  ignoreElements,
+} from 'rxjs/operators';
 import { useObservable } from 'rxjs-hooks';
 import { keyframes } from '@emotion/core';
 
@@ -38,10 +45,10 @@ export const TypeWriter = ({ words, ...props }) => {
     from(words).pipe(
       concatMap(word =>
         concat(
-          typeWord({ word, speed: 70 }).pipe(delay(300)),
-          typeWord({ word, speed: 30, backwards: true }).pipe(
-            delay(1200)
-          )
+          typeWord({ word, speed: 70 }), // type forwards
+          of('').pipe(delay(1500), ignoreElements()), // pause
+          typeWord({ word, speed: 30, backwards: true }), // type backwards
+          of('').pipe(delay(300), ignoreElements()) // pause
         )
       ),
       repeat()
