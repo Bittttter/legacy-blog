@@ -113,7 +113,7 @@ const Readings = () => {
 
   useEffect(() => {
     return () => controller.abort();
-  }, [controller]);
+  }, []);
 
   return (
     <Layout>
