@@ -2,6 +2,9 @@
 import { jsx, Container, Box, Alert, Close } from 'theme-ui';
 import { MDXProvider } from '@mdx-js/react';
 import { useState, useEffect } from 'react';
+import { fromEvent } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { useObservable } from 'rxjs-hooks';
 import wretch from 'wretch';
 import SEO from './SEO';
 import Header from './header';
@@ -30,6 +33,24 @@ export function Layout({
       .catch(() => {});
     return () => controller.abort();
   }, []);
+
+  const pageScrollPercent = useObservable(() =>
+    fromEvent(document, 'scroll').pipe(
+      map(() => {
+        const h = document.documentElement;
+        const body = document.body;
+        const st = 'scrollTop';
+        const sh = 'scrollHeight';
+
+        return (
+          ((h[st] || body[st]) /
+            ((h[sh] || body[sh]) - h.clientHeight)) *
+          100
+        );
+      })
+    )
+  );
+
   return (
     <Box>
       <SEO
@@ -38,6 +59,18 @@ export function Layout({
         image={image}
         pathname={pathname}
         article={article}
+      />
+      <Box
+        sx={{
+          position: 'fixed',
+          top: 0,
+          width: '100%',
+          height: '.3rem',
+          background: t =>
+            `linear-gradient(to right, ${t.colors.text}, ${t.colors.secondary} ${pageScrollPercent}%, transparent 0)`,
+          backgroundRepeat: 'no-repeat',
+          zIndex: 1,
+        }}
       />
       <Header />
 
