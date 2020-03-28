@@ -4,7 +4,7 @@ const PAGE_SIZE = 10;
 
 exports.handler = async (event, ctx) => {
   const { queryStringParameters } = event;
-  const pageNo = parseInt(queryStringParameters.pageNo, 10) || 0;
+  const pageNo = parseInt(queryStringParameters.pageNo, 10) || 1;
 
   await doc.useServiceAccountAuth({
     client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
@@ -22,7 +22,7 @@ exports.handler = async (event, ctx) => {
   const rowCount = sheet.rowCount - 1;
   let limit = PAGE_SIZE;
   const totalPages = Math.ceil(rowCount / PAGE_SIZE);
-  let offset = rowCount - (pageNo + 1) * PAGE_SIZE;
+  let offset = rowCount - pageNo * PAGE_SIZE;
   const remainder = rowCount % PAGE_SIZE;
 
   if (offset < 0 && remainder > 0) {
