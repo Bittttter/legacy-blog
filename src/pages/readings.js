@@ -8,6 +8,7 @@ import {
   Image,
   Link,
 } from 'theme-ui';
+import { lighten } from '@theme-ui/color';
 import { graphql, StaticQuery } from 'gatsby';
 import GatsbyImage from 'gatsby-image';
 import { useState, useEffect } from 'react';
@@ -38,7 +39,7 @@ const PostCard = props => {
         p: 3,
         mt: 4,
         backgroundColor: 'muted',
-        boxShadow: t => `0 .3rem .8rem ${t.colors.primary}`,
+        boxShadow: `0 .3rem .8rem ${lighten('muted', 0.3)}`,
       }}>
       <Text as="p" variant="timestamp">
         {props.Time}

@@ -32,7 +32,6 @@ exports.handler = async (event, ctx) => {
     return {
       statusCode: 200,
       body: JSON.stringify({
-        title: doc.title,
         totalPages,
         feeds: [],
       }),
@@ -44,7 +43,6 @@ exports.handler = async (event, ctx) => {
   for (const row of rows) {
     const _row = {};
     for (const k in row) {
-      // only get primitives
       if (row[k] !== Object(row[k])) {
         _row[k] = row[k];
       }
