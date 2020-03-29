@@ -116,7 +116,10 @@ const Readings = () => {
   }, []);
 
   return (
-    <Layout>
+    <Layout
+      description="Reading notes synched from a Telegram channel where I post excerpts or my notes on books I've recently read."
+      title="Reading Notes"
+      pathname="/readings/">
       <div ref={infiniteRef}>
         {posts.length ? (
           <StaticQuery

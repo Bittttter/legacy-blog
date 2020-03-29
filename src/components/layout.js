@@ -1,10 +1,7 @@
 /** @jsx jsx */
 import { jsx, Container, Box, Alert, Close } from 'theme-ui';
 import { MDXProvider } from '@mdx-js/react';
-import { useState, useEffect } from 'react';
-import { fromEvent } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { useObservable } from 'rxjs-hooks';
+import { useState, useEffect, useLayoutEffect } from 'react';
 import wretch from 'wretch';
 import SEO from './SEO';
 import Header from './header';
@@ -19,6 +16,8 @@ export function Layout({
   article,
 }) {
   const [userFromChina, setUserFromChina] = useState(false);
+  const [scrollPercentage, setScrollPercentage] = useState(0);
+
   useEffect(() => {
     const controller = new AbortController();
     wretch('/api/check-country/')
@@ -34,22 +33,25 @@ export function Layout({
     return () => controller.abort();
   }, []);
 
-  const pageScrollPercent = useObservable(() =>
-    fromEvent(document, 'scroll').pipe(
-      map(() => {
-        const h = document.documentElement;
-        const body = document.body;
-        const st = 'scrollTop';
-        const sh = 'scrollHeight';
+  useLayoutEffect(() => {
+    function onScroll() {
+      const h = document.documentElement;
+      const body = document.body;
+      const st = 'scrollTop';
+      const sh = 'scrollHeight';
 
-        return (
-          ((h[st] || body[st]) /
-            ((h[sh] || body[sh]) - h.clientHeight)) *
+      setScrollPercentage(
+        ((h[st] || body[st]) /
+          ((h[sh] || body[sh]) - h.clientHeight)) *
           100
-        );
-      })
-    )
-  );
+      );
+    }
+    document.addEventListener('scroll', onScroll);
+
+    return () => {
+      document.removeEventListener('scroll', onScroll);
+    };
+  });
 
   return (
     <Box>
@@ -67,7 +69,7 @@ export function Layout({
           width: '100%',
           height: '.3rem',
           background: t =>
-            `linear-gradient(to right, ${t.colors.text}, ${t.colors.secondary} ${pageScrollPercent}%, transparent 0)`,
+            `linear-gradient(to right, ${t.colors.text}, ${t.colors.secondary} ${scrollPercentage}%, transparent 0)`,
           backgroundRepeat: 'no-repeat',
           zIndex: 1,
         }}
