@@ -1,4 +1,5 @@
 export function capitalize(str) {
+  if (!str) return str;
   const head = str[0];
   const tail = str.slice(1);
   return `${head.toUpperCase()}${tail}`;

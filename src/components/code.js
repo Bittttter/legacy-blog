@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx, useColorMode, Text, Box } from 'theme-ui';
-import { darken } from '@theme-ui/color';
 import { preToCodeBlock } from 'mdx-utils';
 import {
   LiveProvider,
@@ -28,6 +27,7 @@ const componentsToLoad = [
   'python',
   'fsharp',
   'haskell',
+  'shell',
 ];
 
 const loader = getLoader(components, componentsToLoad);

@@ -169,6 +169,10 @@ export default {
         borderRadius: '6px',
       },
     },
+    strong: {
+      fontWeight: 'bold',
+      fontSize: 5,
+    },
     a: {
       cursor: 'pointer',
       color: 'secondary',

@@ -13,7 +13,7 @@ In order to understand lenses, you need to first understand some prerequisite fu
 
 ## Currying
 
-Currying is a technique that you use to delay function execution. It enables you to feed a function one argument at a time. For example, with function `const add = (x, y) => x + y`, you need to feed the function two numbers at once in order to perform the calculation. What if we only have the first argument value available and want to store it in the`add` function context, and later call it when we’re ready? Like this:
+Currying is a technique that you use to delay function execution. It enables you to feed a function one argument at a time. For example, with function `const add = (x, y) => x + y`, you need to feed the function two numbers at once in order to perform the calculation. What if we only have the first argument value available and want to store it in the `add` function context, and later call it when we’re ready? Like this:
 
 ```javascript
 const add = (x, y) => x + y;
@@ -25,7 +25,7 @@ const addV = add(v);
 addV(w);
 ```
 
-The example is trivial, but hopefully, you get the whole idea. Why do we want to store a value inside the context of a function? This is how we combine value with behaviors in functional programming. You’ll see what I mean once we get to the lens part.
+The example is trivial, but you get the idea. Why do we want to store a value inside the context of a function? This is how we combine value with behaviors in functional programming. You’ll see what I mean once we get to the lens part.
 
 Here’s how we implement currying in JavaScript:
 
@@ -211,4 +211,4 @@ Suppose that the user one day adds 5 pounds to his record, the data can be updat
 over(inLb, add(5), user); // -> 67.27
 ```
 
-That’s it! Hope you find it useful!
+Wow! That reads like plain English. Without digging into the implementation details, we can interpret the function as this: under this lens, I want to add 5 to the user record. I don't care in what unit the stored data may be, just do it for me! The power of declarative programming really shines in this example.

@@ -2,7 +2,6 @@ import {
   FaTwitter,
   FaGithub,
   FaDev,
-  FaLinkedin,
   FaEnvelope,
 } from 'react-icons/fa';
 
@@ -16,11 +15,6 @@ export default [
     kind: 'Twitter',
     Icon: FaTwitter,
     url: 'https://twitter.com/imleihuang',
-  },
-  {
-    kind: 'LinkedIn',
-    Icon: FaLinkedin,
-    url: 'https://www.linkedin.com/in/leihuang-fe/',
   },
   {
     kind: 'DEV',
