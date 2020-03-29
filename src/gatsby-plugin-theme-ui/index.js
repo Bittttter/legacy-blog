@@ -1,3 +1,5 @@
+import { lighten, darken } from '@theme-ui/color';
+
 export default {
   breakpoints: ['576px', '768px', '992px', '1200px'],
   space: [
@@ -42,12 +44,16 @@ export default {
     heading: 1.25,
   },
   text: {
-    small: {
+    extraSmall: {
       fontSize: 1,
+    },
+    small: {
+      fontSize: 3,
+      color: 'text',
     },
     timestamp: {
       fontSize: 2,
-      color: '#717171',
+      color: darken('primary', 0.1),
     },
     heading: {
       color: 'text',
@@ -85,24 +91,20 @@ export default {
   },
   useColorSchemeMediaQuery: true,
   colors: {
-    text: '#17252a',
-    background: '#feffff',
-    highlightBg: 'rgb(251, 251, 251)',
-    primary: '#2b7a78',
-    secondary: '#d83f87',
-    highlight: '#3aafa9',
-    muted: '#def2f1',
-    grey: '#717171',
+    text: '#191923',
+    background: '#FBFEF9',
+    highlight: '#F39237',
+    primary: '#0E79B2',
+    secondary: '#BF1363',
+    muted: '#E6E6FA',
     modes: {
       dark: {
-        text: '#fff',
-        background: '#011',
-        highlightBg: 'rgb(1, 22, 39)',
-        primary: '#0fc',
-        secondary: '#f0c',
-        highlight: '#0cf',
-        muted: '#1B1F3B',
-        grey: '#eee',
+        text: '#FDFFFC',
+        background: '#1B1B1B',
+        highlight: '#00a8cc',
+        primary: '#ffa41b',
+        secondary: '#ff1e56',
+        muted: '#525252',
       },
     },
   },
@@ -169,11 +171,10 @@ export default {
     },
     a: {
       cursor: 'pointer',
-      color: 'primary',
+      color: 'secondary',
       fontWeight: 'heading',
       textDecoration: 'none',
       position: 'relative',
-      transition: 'color .4s ease-out',
       '&:after': {
         position: 'absolute',
         right: '100%',
@@ -182,11 +183,9 @@ export default {
         borderRadius: '1rem',
         borderTop: t => `0.2rem solid ${t.colors.secondary}`,
         content: '""',
-        transition:
-          'right .4s cubic-bezier(0, .5, 0, 1), border-color .4s ease-out',
+        transition: 'right .4s cubic-bezier(0, .5, 0, 1)',
       },
       '&:hover': {
-        color: 'secondary',
         '&:after': {
           right: 0,
           borderColor: 'secondary',
@@ -257,17 +256,17 @@ export default {
         position: 'absolute',
         right: '100%',
         borderRadius: '1rem',
-        borderTop: t => `0.3rem solid ${t.colors.grey}`,
+        borderTopWidth: '0.3rem',
+        borderTopStyle: 'solid',
+        borderTopColor: lighten('text', 0.4),
         bottom: 0,
         left: 0,
         content: '""',
-        transition:
-          'right .4s cubic-bezier(0, .5, 0, 1), border-color .4s ease-out',
+        transition: 'right .4s cubic-bezier(0, .5, 0, 1)',
       },
       '&:hover': {
         color: 'inherit',
         '&:after': {
-          borderColor: 'grey',
           right: 0,
         },
       },

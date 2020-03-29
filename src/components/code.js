@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx, useColorMode, Text, Box } from 'theme-ui';
+import { darken } from '@theme-ui/color';
 import { preToCodeBlock } from 'mdx-utils';
 import {
   LiveProvider,
@@ -49,7 +50,7 @@ export const Code = props => {
       <LiveError />
       <LivePreview
         sx={{
-          border: t => `1px solid ${t.colors.muted}`,
+          border: t => `1px solid ${t.colors.highlight}`,
           p: 4,
           transition: 'background 0.5s linear, color 0.5s linear',
           'div :first-child': {
@@ -91,7 +92,7 @@ export const Code = props => {
             <Box mb={2} sx={{ margin: '-0.8rem 0 0 -0.8rem' }}>
               <Text
                 as="span"
-                variant="small"
+                variant="extraSmall"
                 sx={{
                   p: 1,
                   borderRadius: '0 0 0.8rem 0',

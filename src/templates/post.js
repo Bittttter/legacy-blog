@@ -3,7 +3,7 @@ import { jsx, Box, Heading, Text, Flex, Link } from 'theme-ui';
 import { graphql, Link as GatsbyLink } from 'gatsby';
 import Image from 'gatsby-image';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import { Tag, ScrollToTop, Layout } from '@components';
+import { Tag, Layout } from '@components';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 // import {
 //   useCurrentInViewport,
@@ -142,15 +142,6 @@ export default function PostLayout({ data, pageContext }) {
             <FaArrowRight sx={{ verticalAlign: 'middle' }} />
           </Link>
         ) : null}
-      </Flex>
-      <Flex
-        sx={{
-          justifyContent: 'flex-end',
-          mr: [3, 6],
-          alignItems: 'center',
-          my: 4,
-        }}>
-        <ScrollToTop />
       </Flex>
     </Layout>
   );

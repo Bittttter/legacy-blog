@@ -69,7 +69,7 @@ export function Layout({
           width: '100%',
           height: '.3rem',
           background: t =>
-            `linear-gradient(to right, ${t.colors.text}, ${t.colors.secondary} ${scrollPercentage}%, transparent 0)`,
+            `linear-gradient(to right, ${t.colors.text}, ${t.colors.primary} ${scrollPercentage}%, transparent 0)`,
           backgroundRepeat: 'no-repeat',
           zIndex: 1,
         }}
@@ -89,8 +89,8 @@ export function Layout({
           </Alert>
         ) : null}
         <MDXProvider>{children}</MDXProvider>
-        <Footer />
       </Container>
+      <Footer />
     </Box>
   );
 }

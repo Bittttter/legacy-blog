@@ -82,7 +82,7 @@ export const MainBio = props => {
                 borderRadius: '50%',
                 border: 'double .6rem transparent',
                 backgroundImage: t =>
-                  `linear-gradient(white, white), linear-gradient(150deg, ${t.colors.primary}, ${t.colors.secondary}, ${t.colors.highlight})`,
+                  `linear-gradient(white, white), linear-gradient(150deg, ${t.colors.primary}, ${t.colors.secondary})`,
                 backgroundOrigin: 'border-box',
                 backgroundClip: 'content-box, border-box',
                 mb: [3, 0],

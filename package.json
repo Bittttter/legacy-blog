@@ -13,7 +13,8 @@
     "build:lambda": "netlify-lambda build src/functions",
     "serve": "gatsby serve -p 9500 -o",
     "clean": "gatsby clean",
-    "analyze": "ANALYZE_BUNDLE_SIZE=true gatsby build"
+    "analyze": "ANALYZE_BUNDLE_SIZE=true gatsby build",
+    "pretest": "eslint --ignore-path .gitignore ."
   },
   "keywords": ["gatsby", "blog", "react", "react hooks"],
   "author": "",
@@ -24,6 +25,7 @@
     "@mdx-js/mdx": "^1.5.7",
     "@mdx-js/react": "^1.5.7",
     "@pauliescanlon/gatsby-mdx-embed": "0.0.17",
+    "@theme-ui/color": "^0.3.1",
     "@weknow/gatsby-remark-codepen": "^0.1.0",
     "date-fns": "^2.11.0",
     "dotenv": "^8.2.0",
@@ -75,5 +77,17 @@
     "rxjs-hooks": "^0.6.2",
     "theme-ui": "^0.3.1",
     "wretch": "^1.7.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "2.x",
+    "@typescript-eslint/parser": "2.x",
+    "babel-eslint": "10.x",
+    "eslint": "6.x",
+    "eslint-config-react-app": "^5.2.1",
+    "eslint-plugin-flowtype": "4.x",
+    "eslint-plugin-import": "2.x",
+    "eslint-plugin-jsx-a11y": "6.x",
+    "eslint-plugin-react": "7.x",
+    "eslint-plugin-react-hooks": "2.x"
   }
 }
