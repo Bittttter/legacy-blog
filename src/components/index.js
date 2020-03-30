@@ -6,4 +6,4 @@ export * from './progress';
 export * from './loader';
 export * from './scroll-to-top';
 export * from './code';
-export * from './call-out';
+export * from './callout';

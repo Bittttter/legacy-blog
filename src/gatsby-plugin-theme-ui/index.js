@@ -65,6 +65,12 @@ export default {
     body: {
       fontSize: 4,
     },
+    callout: {
+      fontSize: 5,
+      fontFamily: 'heading',
+      fontStyle: 'italic',
+      // fontWeight: 'heading',
+    },
     emphasis: {
       fontSize: [5, 6],
       mb: 3,
@@ -168,6 +174,10 @@ export default {
         fontSize: 3,
         borderRadius: '6px',
       },
+    },
+    em: {
+      fontFamily: 'heading',
+      fontStyle: 'italic',
     },
     strong: {
       fontWeight: 'bold',

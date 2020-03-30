@@ -16,7 +16,12 @@
     "analyze": "ANALYZE_BUNDLE_SIZE=true gatsby build",
     "pretest": "eslint --ignore-path .gitignore ."
   },
-  "keywords": ["gatsby", "blog", "react", "react hooks"],
+  "keywords": [
+    "gatsby",
+    "blog",
+    "react",
+    "react hooks"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -54,6 +59,7 @@
     "gatsby-remark-images": "^3.1.50",
     "gatsby-remark-import-code": "^0.1.1",
     "gatsby-remark-prismjs": "^3.3.36",
+    "gatsby-remark-responsive-iframe": "^2.3.1",
     "gatsby-remark-smartypants": "^2.1.23",
     "gatsby-source-filesystem": "^2.1.56",
     "gatsby-transformer-sharp": "^2.3.19",

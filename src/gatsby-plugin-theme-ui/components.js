@@ -1,6 +1,6 @@
-import { Code, CallOut } from '../components';
+import { Code, Callout } from '../components';
 
 export default {
   pre: Code,
-  CallOut,
+  Callout,
 };

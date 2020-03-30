@@ -44,6 +44,7 @@ module.exports = {
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
           `gatsby-remark-import-code`,
+          `gatsby-remark-responsive-iframe`,
           {
             resolve: `gatsby-remark-images`,
             options: {

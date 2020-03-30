@@ -12,12 +12,12 @@ import {
 import { useObservable } from 'rxjs-hooks';
 import { keyframes } from '@emotion/core';
 
-const blink = colors => keyframes`
+const blink = color => keyframes`
      0% {
-         background-color: ${colors.text};  
+         background-color: ${color};  
     }
     49% {
-        background-color: ${colors.text}; 
+        background-color: ${color}; 
     }
     60% {    
        background-color: transparent; 
@@ -26,33 +26,31 @@ const blink = colors => keyframes`
         background-color:transparent;  
     }
     100% {
-       background-color: ${colors.text};    
+       background-color: ${color};    
     }
 `;
 
-const typeWord = ({ word, speed, backwards = false }) =>
+const type = ({ word, speed, backward = false }) =>
   interval(speed).pipe(
     map(x =>
-      backwards
+      backward
         ? word.substr(0, word.length - x - 1)
         : word.substr(0, x + 1)
     ),
     take(word.length)
   );
 
+const typeEffect = word =>
+  concat(
+    type({ word, speed: 70 }), // type forwards
+    of('').pipe(delay(1500), ignoreElements()), // pause
+    type({ word, speed: 30, backward: true }), // delete
+    of('').pipe(delay(300), ignoreElements()) // pause
+  );
+
 export const TypeWriter = ({ words, ...props }) => {
   const value = useObservable(() =>
-    from(words).pipe(
-      concatMap(word =>
-        concat(
-          typeWord({ word, speed: 70 }), // type forwards
-          of('').pipe(delay(1500), ignoreElements()), // pause
-          typeWord({ word, speed: 30, backwards: true }), // type backwards
-          of('').pipe(delay(300), ignoreElements()) // pause
-        )
-      ),
-      repeat()
-    )
+    from(words).pipe(concatMap(typeEffect), repeat())
   );
   return (
     <Text
@@ -67,7 +65,7 @@ export const TypeWriter = ({ words, ...props }) => {
           top: 0,
           right: '-1rem',
           animation: ({ colors }) =>
-            `${blink(colors).toString()} .8s linear infinite`,
+            `${blink(colors.text).toString()} .8s linear infinite`,
         },
       }}>
       {value}
