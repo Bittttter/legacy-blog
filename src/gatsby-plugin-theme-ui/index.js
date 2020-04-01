@@ -69,12 +69,6 @@ export default {
       fontSize: 5,
       fontFamily: 'heading',
       fontStyle: 'italic',
-      // fontWeight: 'heading',
-    },
-    tip: {
-      fontSize: 5,
-      fontFamily: 'body',
-      color: 'text',
     },
     emphasis: {
       fontSize: [5, 6],
