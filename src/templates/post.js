@@ -87,7 +87,9 @@ export default function PostLayout({ data, pageContext }) {
       <Heading as="h2" my={2}>
         {title}
       </Heading>
-      <Text variant="timestamp">{date}</Text>
+      <Text variant="timestamp" as="time">
+        {date}
+      </Text>
       <Box
         mt={3}
         sx={{

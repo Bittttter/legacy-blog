@@ -7,3 +7,5 @@ export * from './loader';
 export * from './scroll-to-top';
 export * from './code';
 export * from './callout';
+export * from './styled-quote';
+export * from './tip';

@@ -40,7 +40,9 @@ const Home = ({ data }) => {
                 {post.frontmatter.title}
               </Heading>
             </Link>
-            <Text variant="timestamp">{post.frontmatter.date}</Text>
+            <Text variant="timestamp" as="time">
+              {post.frontmatter.date}
+            </Text>
             <Box
               sx={{
                 my: 3,

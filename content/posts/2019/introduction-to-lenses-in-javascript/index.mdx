@@ -147,7 +147,7 @@ The `always` function looks silly, but look at how we use it to implement `set`,
 
 Based on the examples I gave earlier, it’s not obvious how useful lenses can be. In JavaScript, we can read and set values in objects very easily. It seems like there’s no need for all the hassles!
 
-**The true power of lenses comes from their composability.**
+<Callout>The power of lenses comes from their composability.</Callout>
 
 Let’s first define a `compose` function:
 
@@ -211,4 +211,4 @@ Suppose that the user one day adds 5 pounds to his record, the data can be updat
 over(inLb, add(5), user); // -> 67.27
 ```
 
-Wow! That reads like plain English. Without digging into the implementation details, we can interpret the function as this: under this lens, I want to add 5 to the user record. I don't care in what unit the stored data may be, just do it for me! The power of declarative programming really shines in this example.
+Wow! That reads like plain English. Without digging into the implementation details, we can interpret the operation as this: under this lens, I want to add 5 to the user record. I don't care in what unit the stored data may be, just do it for me! The power of declarative programming really shines in this example.

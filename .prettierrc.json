@@ -7,7 +7,6 @@
   "tabWidth": 2,
   "trailingComma": "es5",
   "useTabs": false,
-  "proseWrap": "never",
   "overrides": [
     {
       "files": ".prettierrc",
