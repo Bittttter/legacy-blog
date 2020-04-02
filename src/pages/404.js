@@ -1,7 +1,8 @@
 /** @jsx jsx */
-import { jsx, Container, Text, Heading, Link } from 'theme-ui';
+import { jsx, Text, Heading, Link } from 'theme-ui';
 import { Link as GatsbyLink } from 'gatsby';
 import styled from '@emotion/styled';
+import { Layout } from '@components/';
 
 const Wrapper = styled.div`
   position: relative;
@@ -20,7 +21,7 @@ const Frame = styled.iframe`
 `;
 
 const PageNotFound = () => (
-  <Container px={3}>
+  <Layout title="Page Not Found">
     <Heading as="h1" my={4}>
       Page Not Found!
     </Heading>
@@ -41,7 +42,7 @@ const PageNotFound = () => (
     <Link sx={{ fontSize: 4 }} as={GatsbyLink} to="/">
       Go back to home
     </Link>
-  </Container>
+  </Layout>
 );
 
 export default PageNotFound;
