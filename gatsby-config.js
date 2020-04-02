@@ -114,7 +114,7 @@ module.exports = {
         start_url: `/`,
         background_color: siteMetadata.backgroundColor,
         theme_color: siteMetadata.themeColor,
-        display: `minimal-ui`,
+        display: `standalone`,
         icon: siteMetadata.favicon,
       },
     },
