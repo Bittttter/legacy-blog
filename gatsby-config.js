@@ -92,13 +92,13 @@ module.exports = {
         name: `posts`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/pages`,
-        name: `pages`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     path: `${__dirname}/content/pages`,
+    //     name: `pages`,
+    //   },
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -144,7 +144,7 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMdx } }) => {
-              return allMdx.nodes.map(node => {
+              return allMdx.nodes.map((node) => {
                 return Object.assign({}, node.frontmatter, {
                   description: node.excerpt,
                   date: node.frontmatter.date,
@@ -199,7 +199,7 @@ module.exports = {
     `gatsby-plugin-netlify-cache`,
     `gatsby-plugin-netlify`, // must be last
   ],
-  developMiddleware: app => {
+  developMiddleware: (app) => {
     app.use(
       '/api/',
       createProxyMiddleware({

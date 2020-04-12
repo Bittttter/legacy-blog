@@ -3,7 +3,6 @@ import { jsx, Text, Flex } from 'theme-ui';
 import { Link as GatsbyLink } from 'gatsby';
 import { FaHome } from 'react-icons/fa';
 import { Location } from '@reach/router';
-import Logo from './logo';
 
 const Footer = () => (
   <Location>
@@ -18,20 +17,6 @@ const Footer = () => (
           justifyContent: 'flex-end',
           alignItems: 'center',
         }}>
-        <Logo
-          sx={{
-            width: [200, 300],
-            mb: 4,
-            path: {
-              fill: 'primary',
-            },
-          }}
-        />
-        {/* <Location>
-      {({ location }) => {
-        return <p>The location is {location.pathname}</p>;
-      }}
-    </Location> */}
         {location.pathname !== '/' ? (
           <GatsbyLink
             to="/"

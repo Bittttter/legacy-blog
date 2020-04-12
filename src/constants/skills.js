@@ -4,15 +4,20 @@ export const techSkills = [
     percentage: 70,
     color: '#1572B6',
   },
-  {
-    skill: 'Docker',
-    percentage: 60,
-    color: '#0db7ed',
-  },
+  // {
+  //   skill: 'Docker',
+  //   percentage: 60,
+  //   color: '#0db7ed',
+  // },
   {
     skill: 'Elixir',
-    percentage: 45,
+    percentage: 60,
     color: '#6e4a7e',
+  },
+  {
+    skill: 'Gatsby.js',
+    percentage: 70,
+    color: 'rebeccapurple',
   },
   {
     skill: 'GraphQL',
@@ -26,7 +31,7 @@ export const techSkills = [
   },
   {
     skill: 'Node.js',
-    percentage: 60,
+    percentage: 68,
     color: '#3C873A',
   },
   {
@@ -42,8 +47,7 @@ export const techSkills = [
 ];
 
 export const toolsProficiency = [
-  { tool: 'Sketch', percentage: 50 },
-  { tool: 'Figma', percentage: 40 },
-  { tool: 'Illustrator', percentage: 40 },
-  { tool: 'VSCode', percentage: 75 },
+  { tool: 'Sketch', percentage: 40 },
+  { tool: 'Figma', percentage: 50 },
+  { tool: 'Vim', percentage: 72 },
 ];
