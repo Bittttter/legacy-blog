@@ -56,11 +56,11 @@ const showText = keyframes`
 //     }
 // `;
 
-export const MainBio = props => {
+export const MainBio = (props) => {
   return (
     <StaticQuery
       query={mainBioQuery}
-      render={data => {
+      render={(data) => {
         return (
           <Box
             {...props}
@@ -81,7 +81,7 @@ export const MainBio = props => {
                 width: '25rem',
                 borderRadius: '50%',
                 border: 'double .6rem transparent',
-                backgroundImage: t =>
+                backgroundImage: (t) =>
                   `linear-gradient(white, white), linear-gradient(150deg, ${t.colors.primary}, ${t.colors.secondary})`,
                 backgroundOrigin: 'border-box',
                 backgroundClip: 'content-box, border-box',
@@ -136,7 +136,7 @@ export const MainBio = props => {
               </Flex>
               <Text variant="body" mt={3}>
                 I taught myself programming and made it my career a
-                few years ago. I have two years of fulltime working
+                few years ago. I have three years of fulltime working
                 experience as a front-end developer, including one
                 year at Alipay. Before that, I was a content marketing
                 specialist at a sales company.

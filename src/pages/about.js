@@ -45,10 +45,10 @@ const About = ({ data }) => {
       </Box>
       <Text as="p" variant="emphasis">
         I'm Lei Huang, a frontend engineer from China. I taught myself
-        programming and made it my career a few years ago. I have two
-        years of fulltime working experience as a front-end developer,
-        including one year at Alipay. Before that, I was a content
-        marketing specialist at a sales company.
+        programming and made it my career a few years ago. I have
+        three years of fulltime working experience as a front-end
+        developer, including one year at Alipay. Before that, I was a
+        content marketing specialist at a sales company.
       </Text>
       <Text as="p" variant="emphasis">
         My main focus is user experience and web performance. For now,
@@ -79,21 +79,14 @@ const About = ({ data }) => {
       </Text>
       <Text as="p" variant="emphasis">
         Being born and living in an authoritarian state, I care deeply
-        about human rights and social justice. Holding and often
-        expressing political opinions has made me a minority in most
-        groups. I certainly don't fit in the Chinese nationalists. But
-        even among the Chinese dissident rebels, I still can't fit in,
-        as the majority of them are right-wing wishful-thinking
-        conspiracy-theory-chasing Republicans (Yes, it sounds absurd,
-        but it's a real thing in China{' '}
-        <span role="img" aria-label="face palm emoji">
-          🤦🏻‍♂️
-        </span>
-        ).
+        about human rights and social justice. The progressive ideas
+        were often ridiculed as being radical and unrealistic, but the
+        tide is turning globally. I'm proud to be part of the
+        resistance.
       </Text>
       <Text as="p" variant="emphasis">
         I identify myself as a global citizen. Even though the idea is
-        under attack from all directions around the world, I believe
+        under attack from many fronts around the world, I believe
         there's still hope as the young generation is awakening. The
         liberal cosmopolitanism ideal advocated by Immanuel Kant is
         always worth fighting for if we dream of an open, just, and

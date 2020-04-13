@@ -17,7 +17,7 @@ const Home = ({ data }) => {
   return (
     <Layout
       description="Lei Huang is a frontend developer from China. He specializes in web development and web design."
-      title="Lei Huang"
+      title="Home"
       pathname="/">
       <MainBio mb={[5, 6]} />
       <Box
@@ -28,7 +28,7 @@ const Home = ({ data }) => {
             animation: `${showArticles.toString()} .8s ease .6s forwards`,
           },
         }}>
-        {posts.map(post => (
+        {posts.map((post) => (
           <Box key={post.id} mt={4}>
             <Link as={GatsbyLink} to={post.fields.slug}>
               <Heading
@@ -50,7 +50,7 @@ const Home = ({ data }) => {
                   ml: [2, 3],
                 },
               }}>
-              {post.frontmatter.tags.map(tag => (
+              {post.frontmatter.tags.map((tag) => (
                 <Tag key={tag} url={`/tag/${tag}`}>
                   {tag}
                 </Tag>
