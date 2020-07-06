@@ -40,28 +40,20 @@ const About = ({ data }) => {
           sx={{ width: '100%' }}
         />
         <Text variant="body" mt={3} sx={{ fontStyle: 'italic' }}>
-          Just a serious coder at work.
+          Reading some random philosophical papers.
         </Text>
       </Box>
       <Text as="p" variant="emphasis">
         I'm Lei Huang, a frontend engineer from China. I taught myself
-        programming and made it my career a few years ago. I have
-        three years of fulltime working experience as a front-end
-        developer, including one year at Alipay. Before that, I was a
-        content marketing specialist at a sales company.
+        programming and made it my career a few years ago. Currently,
+        I'm working remotely for a fin-tech company, previously I worked for
+        Alipay. Before becoming a software engineer, I was a content
+        marketing specialist at a sales company.
       </Text>
       <Text as="p" variant="emphasis">
         My main focus is user experience and web performance. For now,
         I mostly work with JavaScript and React to build web apps. But
-        I also dabble in web design. I focus on design systems and
-        JAMstack at the moment.
-      </Text>
-      <Text as="p" variant="emphasis">
-        Apart from writing JavaScript for work, I also love to write
-        Haskell for recreational purposes. Writing denotative code
-        gives me a sense of elevation. It's an experience I don't get
-        from writing imperative JavaScript code. Sometimes I choose to
-        be impractical to appreciate the beauty of the universe.
+        I also dabble in web design.
       </Text>
       <Text as="p" variant="emphasis">
         My personality type is{' '}
@@ -163,7 +155,7 @@ const About = ({ data }) => {
 
 export const pageQuery = graphql`
   query bioPicQuery {
-    avatar: file(absolutePath: { regex: "/profile-at-work/" }) {
+    avatar: file(absolutePath: { regex: "/profile-at-home/" }) {
       publicURL
       childImageSharp {
         fluid(maxWidth: 900) {
