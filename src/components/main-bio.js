@@ -136,15 +136,17 @@ export const MainBio = (props) => {
               </Flex>
               <Text variant="body" mt={3}>
                 I taught myself programming and made it my career a
-                few years ago. I have three years of fulltime working
-                experience as a front-end developer, including one
-                year at Alipay. Before that, I was a content marketing
+                few years ago. Currently, I'm working remotely for a
+                crypto exchange platform, previously I worked for
+                Alipay. Before all that, I was a content marketing
                 specialist at a sales company.
               </Text>
               <Text variant="body" mt={2}>
-                I constantly seek opportunities to learn and to hone
-                my skills. I’m now focused on design systems and
-                JAMstack.
+                I wake up and enjoy lattes and jazz every morning at 4
+                AM. I believe in life long learning and constant
+                growth. Adulthood doesn't mean a stop of
+                transformational change. I'm still reparenting myself
+                to become a better person.
               </Text>
             </Box>
           </Box>

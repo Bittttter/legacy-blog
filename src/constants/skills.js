@@ -1,23 +1,23 @@
 export const techSkills = [
   {
-    skill: 'React',
+    skill: 'React/JS',
     percentage: 80,
     color: '#61dbfb',
   },
   {
-    skill: 'JavaScript',
+    skill: 'TypeScript',
     percentage: 80,
-    color: '#f1e05a',
-  },
-  {
-    skill: 'CSS',
-    percentage: 70,
-    color: '#1572B6',
+    color: '#3178C6',
   },
   {
     skill: 'Elixir',
     percentage: 60,
     color: '#6e4a7e',
+  },
+  {
+    skill: 'Rust',
+    percentage: 55,
+    color: '#b7410e',
   },
 ];
 

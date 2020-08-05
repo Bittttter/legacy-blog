@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Text, Box, Heading, Grid, Link } from 'theme-ui';
+import { jsx, Text, Box, Heading, Grid, Link, Flex } from 'theme-ui';
 import { graphql } from 'gatsby';
 import Image from 'gatsby-image';
 import { Circle, Line, Layout } from '@components';
@@ -21,7 +21,7 @@ const About = ({ data }) => {
     <Layout
       description="Lei Huang is a frontend developer from China. He specializes in web development and web design."
       title="About Lei Huang"
-      image={data.avatar.publicURL}
+      image={data.selfie.publicURL}
       pathname="/about/">
       <Text
         sx={{
@@ -34,21 +34,28 @@ const About = ({ data }) => {
         Hi there!
       </Text>
       <Box my={4} sx={{ textAlign: 'center' }}>
-        <Image
-          fluid={data.avatar.childImageSharp.fluid}
-          alt="Profile image of Lei Huang"
-          sx={{ width: '100%' }}
-        />
+        <Flex>
+          <Image
+            fluid={data.selfie.childImageSharp.fluid}
+            alt="Profile image of Lei Huang"
+            sx={{ width: '100%', mr: [1, 2] }}
+          />
+          <Image
+            fluid={data.cats.childImageSharp.fluid}
+            alt="Cats"
+            sx={{ width: '100%' }}
+          />
+        </Flex>
         <Text variant="body" mt={3} sx={{ fontStyle: 'italic' }}>
-          Reading some random philosophical papers.
+          Me and my cats.
         </Text>
       </Box>
       <Text as="p" variant="emphasis">
         I'm Lei Huang, a frontend engineer from China. I taught myself
         programming and made it my career a few years ago. Currently,
-        I'm working remotely for a fin-tech company, previously I worked for
-        Alipay. Before becoming a software engineer, I was a content
-        marketing specialist at a sales company.
+        I'm working remotely for a crypto exchange platform,
+        previously I worked for Alipay. Before all that, I was a
+        content marketing specialist at a sales company.
       </Text>
       <Text as="p" variant="emphasis">
         My main focus is user experience and web performance. For now,
@@ -155,10 +162,18 @@ const About = ({ data }) => {
 
 export const pageQuery = graphql`
   query bioPicQuery {
-    avatar: file(absolutePath: { regex: "/profile-at-home/" }) {
+    selfie: file(absolutePath: { regex: "/selfie-1/" }) {
       publicURL
       childImageSharp {
         fluid(maxWidth: 900) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+    cats: file(absolutePath: { regex: "/cats/" }) {
+      publicURL
+      childImageSharp {
+        fluid(maxWidth: 1000) {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
