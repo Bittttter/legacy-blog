@@ -49,7 +49,7 @@ newsList.forEach((news) => {
 });
 ```
 
-In practice, I'd never done massive computations on the front-end, as JavaScript is not very efficient in handling CPU-intensive work. However, after some google search, I found a way to get around this limitation. The idea is to slice a big task to multiple ones and put them to different ticks of event loop.
+In practice, I'd never done massive computations on the front-end, as JavaScript is not very efficient in handling CPU-intensive work. However, after some google search, I found a way to get around this limitation. The idea is to slice a big task to multiple ones and put them to different ticks of the event loop.
 
 ### Time-slicing to the rescue
 
@@ -79,7 +79,7 @@ function id(x, cb) {
 }
 ```
 
-In continuation-passing style, instead of "return" the precedure to its caller, you invoke the "current continuation" callback (provided by the caller) on the return value.
+In continuation-passing style, instead of "return" the procedure to its caller, you invoke the "current continuation" callback (provided by the caller) on the return value.
 
 The foundation of CPS is simple:
 
@@ -140,17 +140,17 @@ iterate(newsList, indexNews, () => {
 });
 ```
 
-This introduces too many recursions and makes our code way more complicated without improving the performance. But we are very close!
+This introduces too many recursions and makes our code way more complicated without improving performance. But we are very close!
 
 Notice a very important feature of the `indexNews` function. It takes a continuation callback and calls the continuation after finishing the current task. We've achieved "Inversion of Control" here. We can tell `indexNews` what to do in the next iteration.
 
-In our case, we want it to move subsequent tasks to different new callstacks, so that we don't put too much pressure on the current callstack.
+In our case, we want it to move subsequent tasks to different new call stacks so that we don't put too much pressure on the current call stack.
 
-However, we don't want to move every task to its own callstack, which is unnecessary.
+However, we don't want to move every task to its own call stack, which is unnecessary.
 
 So, here's the rule:
 
-Each callstack can take 500 tasks, after that limit, we put the next new tasks in the next callstack. Repeat until all tasks are done.
+Each call stack can take 500 tasks, after that limit, we put the next new tasks in the next call stack. Repeat until all tasks are done.
 
 We just need a few modifications to our previous code to achive this:
 
@@ -171,10 +171,10 @@ function indexNews(item, tag, continuation) {
 indexNews.skip = 0;
 ```
 
-Because of how event loop works in JavaScript, the `setTimeout` method will move its callback to the next execution callstack.
+Because of how event loop works in JavaScript, the `setTimeout` method will move its callback to the next execution call stack.
 
 ### Summary
 
-We introduced a technique we already know, and rediscovered the hidden power of it. Continuation-passing Style enables us to have control over what happens next when current operation is completed. Relying on this feature, we first sliced a very big task to many small ones, and then chunck them to different callstacks.
+We introduced a technique we already know and rediscovered the hidden power of it. Continuation-passing Style enables us to have control over what happens next when the current operation is completed. Relying on this feature, we first sliced a very big task to many small ones, and then chunk them to different call stacks.
 
 Check out the project [here](https://github.com/leihuang69/news-list).
