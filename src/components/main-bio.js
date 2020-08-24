@@ -91,7 +91,7 @@ export const MainBio = (props) => {
                 // animationDuration: '1s',
                 // animationFillMode: 'both',
               }}
-              alt="Profile image of Lei Huang"
+              alt="Profile image of Levi Wong"
             />
             <Box
               sx={{
@@ -102,7 +102,7 @@ export const MainBio = (props) => {
               <Text variant="heading">
                 Hello! This is{' '}
                 <Text as="span" color="primary">
-                  Lei Huang
+                  Levi Wong.
                 </Text>
                 <Text>
                   I'm{' '}

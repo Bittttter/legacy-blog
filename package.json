@@ -1,7 +1,7 @@
 {
-  "name": "leihuang.dev",
-  "version": "1.0.0",
-  "description": "Lei Huang's blog website.",
+  "name": "levism.com",
+  "version": "1.1.0",
+  "description": "Levi Wong's blog website.",
   "main": "index.js",
   "scripts": {
     "develop": "gatsby develop -p 9988 -o",
@@ -16,12 +16,7 @@
     "analyze": "ANALYZE_BUNDLE_SIZE=true gatsby build",
     "pretest": "eslint --ignore-path .gitignore ."
   },
-  "keywords": [
-    "gatsby",
-    "blog",
-    "react",
-    "react hooks"
-  ],
+  "keywords": ["gatsby", "blog", "react", "react hooks"],
   "author": "",
   "license": "ISC",
   "dependencies": {

@@ -16,7 +16,7 @@ const Home = ({ data }) => {
   const { nodes: posts } = data.allMdx;
   return (
     <Layout
-      description="Lei Huang is a frontend developer from China. He specializes in web development and web design."
+      description="Levi Wong is a frontend developer from China. He specializes in web development and web design."
       title="Home"
       pathname="/">
       <MainBio mb={[5, 6]} />

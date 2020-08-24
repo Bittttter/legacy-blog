@@ -32,7 +32,7 @@ function duration(ms) {
     const start = Date.now();
     return interval(0, animationFrameScheduler).pipe(
       map(() => (Date.now() - start) / ms),
-      takeWhile(n => n <= 1)
+      takeWhile((n) => n <= 1)
     );
   });
 }
@@ -47,7 +47,7 @@ Then we calculate how far the object is away from the origin at every point in t
 ## Move the object
 
 ```js
-const distance = d => t => d * t;
+const distance = (d) => (t) => d * t;
 ```
 
 `d` is the total distance the object is going to move. `t` is the time ratio, which has been calculated in the last step. We multiply them and get the distance at that point.
@@ -59,12 +59,12 @@ const targetDiv = document.querySelector('.target');
 
 const moveRight$ = duration(1500).pipe(
   map(distance(1000)),
-  tap(x => (targetDiv.style.left = x + 'px'))
+  tap((x) => (targetDiv.style.left = x + 'px'))
 );
 
 const moveDown$ = duration(900).pipe(
   map(distance(700)),
-  tap(y => (targetDiv.style.top = y + 'px'))
+  tap((y) => (targetDiv.style.top = y + 'px'))
 );
 ```
 
@@ -91,13 +91,13 @@ We can use two different easing functions that form a cubic relationship between
 The first one is `easeInQuad`：
 
 ```js
-const easeInQuad = t => t * t;
+const easeInQuad = (t) => t * t;
 ```
 
 The second one is `easeInQuint`：
 
 ```js
-const easeInQuint = t => Math.pow(t, 6);
+const easeInQuint = (t) => Math.pow(t, 6);
 ```
 
 Then we only need to map the time ratio emitted from the interval pipeline to the result of applying these easing functions:
@@ -106,16 +106,16 @@ Then we only need to map the time ratio emitted from the interval pipeline to th
 const moveDown$ = duration(900).pipe(
   map(easeInQuint),
   map(distance(700)),
-  tap(y => (targetDiv.style.top = y + 'px'))
+  tap((y) => (targetDiv.style.top = y + 'px'))
 );
 
 const moveRight$ = duration(1500).pipe(
   map(easeInQuad),
   map(distance(1000)),
-  tap(x => (targetDiv.style.left = x + 'px'))
+  tap((x) => (targetDiv.style.left = x + 'px'))
 );
 ```
 
 See the codepen below for the result and the complete code:
 
-https://codepen.io/leihuang/pen/OBVBjb
+https://codepen.io/levibit/pen/OBVBjb

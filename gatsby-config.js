@@ -2,14 +2,14 @@ require(`dotenv`).config();
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
 const siteMetadata = {
-  title: `Lei Huang`,
-  description: `Lei Huang is a frontend developer. He writes about web development and design.`,
+  title: `Levism`,
+  description: `Levi Wong is a frontend developer. He writes about frontend development and web design.`,
   image: `/default-site-image.jpg`,
-  siteUrl: `https://leihuang.dev`,
+  siteUrl: `https://levism.com`,
   siteLanguage: `en-US`,
   siteLocale: `en_us`,
-  twitterUsername: `@imleihuang`,
-  author: `Lei Huang`,
+  twitterUsername: `@levibit`,
+  author: `Levi Wong`,
   favicon: `./static/android-chrome-512x512.png`,
   keywords: ['frontend', 'JavaScript', 'React', 'CSS'],
   themeColor: '#2b7a78',
@@ -109,7 +109,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Lei Huang`,
+        name: `Levism`,
         short_name: `LH`,
         start_url: `/`,
         background_color: siteMetadata.backgroundColor,

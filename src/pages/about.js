@@ -19,8 +19,8 @@ const About = ({ data }) => {
 
   return (
     <Layout
-      description="Lei Huang is a frontend developer from China. He specializes in web development and web design."
-      title="About Lei Huang"
+      description="Levi Wong is a frontend developer from China. He specializes in web development and web design."
+      title="About Levi Wong"
       image={data.selfie.publicURL}
       pathname="/about/">
       <Text
@@ -37,7 +37,7 @@ const About = ({ data }) => {
         <Flex>
           <Image
             fluid={data.selfie.childImageSharp.fluid}
-            alt="Profile image of Lei Huang"
+            alt="Profile image of Levi Wong"
             sx={{ width: '100%', mr: [1, 2] }}
           />
           <Image
@@ -51,11 +51,12 @@ const About = ({ data }) => {
         </Text>
       </Box>
       <Text as="p" variant="emphasis">
-        I'm Lei Huang, a frontend engineer from China. I taught myself
-        programming and made it my career a few years ago. Currently,
-        I'm working remotely for a crypto exchange platform,
-        previously I worked for Alipay. Before all that, I was a
-        content marketing specialist at a sales company.
+        I'm Levi Wong. I come from China, but I've never felt like a
+        true Chinese. I taught myself programming and made it my
+        career a few years ago. Currently, I'm working remotely for a
+        crypto exchange platform, previously I worked for Alipay.
+        Before all that, I was a content marketing specialist at a
+        sales company.
       </Text>
       <Text as="p" variant="emphasis">
         My main focus is user experience and web performance. For now,
@@ -91,28 +92,6 @@ const About = ({ data }) => {
         always worth fighting for if we dream of an open, just, and
         humane future.
       </Text>
-      <Box
-        sx={{
-          height: '.1rem',
-          width: '100%',
-          my: 4,
-          background: (t) =>
-            `linear-gradient(to right, ${t.colors.highlight}, ${t.colors.secondary})`,
-        }}
-      />
-      <Heading as="h2" mb={4}>
-        Certificate
-      </Heading>
-      <a
-        href="https://www.freecodecamp.org/certification/leihuang/full-stack"
-        target="_blank"
-        rel="noopener noreferrer">
-        <Image
-          fluid={data.certificate.childImageSharp.fluid}
-          alt="Full Stack certificate of Lei Huang from FreeCodeCamp"
-          sx={{ width: '100%' }}
-        />
-      </a>
       <Box
         sx={{
           height: '.1rem',
@@ -174,14 +153,6 @@ export const pageQuery = graphql`
       publicURL
       childImageSharp {
         fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
-        }
-      }
-    }
-    certificate: file(absolutePath: { regex: "/fcc-certificate/" }) {
-      publicURL
-      childImageSharp {
-        fluid(maxWidth: 900) {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }

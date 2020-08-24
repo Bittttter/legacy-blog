@@ -31,7 +31,7 @@ const Footer = () => (
           </GatsbyLink>
         ) : null}
         <Text variant="small">
-          Design and {'</>'} with ☕ by Lei Huang <br /> © 2018 -{' '}
+          Design and {'</>'} with ☕ by Levi Wong <br /> © 2018 -{' '}
           {new Date().getFullYear()}
         </Text>
       </Flex>
