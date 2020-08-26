@@ -3,8 +3,9 @@ import { jsx, Box, Heading, Text, Flex, Link } from 'theme-ui';
 import { graphql, Link as GatsbyLink } from 'gatsby';
 import Image from 'gatsby-image';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import { Tag, Layout } from '@components';
+import { Tag, Layout, Feedback } from '@components';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { mentions } from '@utils';
 // import {
 //   useCurrentInViewport,
 //   CurrentInViewportProvider,
@@ -74,8 +75,16 @@ export default function PostLayout({ data, pageContext }) {
     excerpt,
   } = data.mdx;
 
-  const { title, date, cover, tags, coverCredit } = frontmatter;
+  const {
+    title,
+    date,
+    cover,
+    tags,
+    coverCredit,
+    // twitterId,
+  } = frontmatter;
   const { previous, next } = pageContext;
+  // const { comments, likes, reposts } = mentions(data);
 
   return (
     <Layout
@@ -98,7 +107,7 @@ export default function PostLayout({ data, pageContext }) {
             ml: 3,
           },
         }}>
-        {tags.map(tag => (
+        {tags.map((tag) => (
           <Tag key={tag} url={`/tag/${tag}`}>
             {tag}
           </Tag>
@@ -116,6 +125,12 @@ export default function PostLayout({ data, pageContext }) {
         {coverCredit}
       </Text>
       <MDXRenderer>{body}</MDXRenderer>
+      {/* <Feedback
+        likes={likes}
+        comments={comments}
+        reposts={reposts}
+        twitterId={twitterId}
+      /> */}
       <Flex
         sx={{
           mt: 4,

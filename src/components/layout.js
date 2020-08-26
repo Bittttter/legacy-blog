@@ -23,7 +23,7 @@ export function Layout({
     wretch('/api/check-country/')
       .signal(controller)
       .get()
-      .json(res => {
+      .json((res) => {
         const { country } = res;
         if (country === 'CN') {
           setUserFromChina(true);
@@ -68,7 +68,7 @@ export function Layout({
           top: 0,
           width: '100%',
           height: '.3rem',
-          background: t =>
+          background: (t) =>
             `linear-gradient(to right, ${t.colors.text}, ${t.colors.primary} ${scrollPercentage}%, transparent 0)`,
           backgroundRepeat: 'no-repeat',
           zIndex: 1,

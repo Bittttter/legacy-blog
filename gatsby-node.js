@@ -7,6 +7,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
       alias: {
         '@components': path.resolve(__dirname, 'src/components'),
         '@assets': path.resolve(__dirname, 'content/assets'),
+        '@utils': path.resolve(__dirname, 'src/utils'),
       },
       modules: [path.resolve(__dirname, 'src'), 'node_modules'],
     },
@@ -37,7 +38,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     reporter.panicOnBuild('🚨  ERROR: querying tags');
   }
 
-  tagsRes.data.allMdx.group.forEach(tag => {
+  tagsRes.data.allMdx.group.forEach((tag) => {
     createPage({
       path: `/tag/${tag.fieldValue}`,
       component: path.resolve('./src/templates/tag.js'),
@@ -98,7 +99,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   });
 };
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
+exports.onCreateNode = ({ node, actions, getNode, getNodes }) => {
   const { createNodeField } = actions;
   if (node.internal.type === `Mdx`) {
     const value = createFilePath({ node, getNode });
@@ -107,5 +108,14 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       node,
       value,
     });
+  }
+
+  if (node.internal.type === 'WebMentionEntry') {
+    const {
+      siteMetadata: { siteUrl },
+    } = getNodes().find((n) => n.internal.type === 'Site');
+
+    const slug = node.wmTarget.replace(siteUrl, '');
+    createNodeField({ node, name: 'slug', value: slug });
   }
 };

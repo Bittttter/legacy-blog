@@ -16,7 +16,12 @@
     "analyze": "ANALYZE_BUNDLE_SIZE=true gatsby build",
     "pretest": "eslint --ignore-path .gitignore ."
   },
-  "keywords": ["gatsby", "blog", "react", "react hooks"],
+  "keywords": [
+    "gatsby",
+    "blog",
+    "react",
+    "react hooks"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -62,6 +67,7 @@
     "google-spreadsheet": "^3.0.10",
     "hast-util-heading": "^1.0.4",
     "http-proxy-middleware": "^1.0.3",
+    "lodash": "^4.17.20",
     "mdx-utils": "^0.2.0",
     "netlify-lambda": "^1.6.3",
     "normalize.css": "^8.0.1",
@@ -89,6 +95,7 @@
     "eslint-plugin-import": "2.x",
     "eslint-plugin-jsx-a11y": "6.x",
     "eslint-plugin-react": "7.x",
-    "eslint-plugin-react-hooks": "2.x"
+    "eslint-plugin-react-hooks": "2.x",
+    "gatsby-plugin-webmention": "^0.2.0"
   }
 }

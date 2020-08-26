@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Text, Flex } from 'theme-ui';
+import { jsx, Text, Flex, Link } from 'theme-ui';
 import { Link as GatsbyLink } from 'gatsby';
 import { FaHome } from 'react-icons/fa';
 import { Location } from '@reach/router';
@@ -17,6 +17,30 @@ const Footer = () => (
           justifyContent: 'flex-end',
           alignItems: 'center',
         }}>
+        <Text variant="small" mb={4}>
+          Follow{' '}
+          <Link
+            className="h-card"
+            rel="me"
+            href="https://levism.com/">
+            Levi
+          </Link>{' '}
+          on{' '}
+          <Link href="https://twitter.com/levibit" rel="me">
+            Twitter (@levibit)
+          </Link>
+          ,{' '}
+          <Link href="https://github.com/levibit" rel="me">
+            GitHub
+          </Link>
+          , or send him an{' '}
+          <Link
+            className="u-email"
+            href="mailto:levi.wong@hey.com"
+            rel="me">
+            email
+          </Link>
+        </Text>
         {location.pathname !== '/' ? (
           <GatsbyLink
             to="/"
