@@ -17,7 +17,7 @@ const Footer = () => (
           justifyContent: 'flex-end',
           alignItems: 'center',
         }}>
-        <Text variant="small" mb={4}>
+        <Text variant="small" sx={{ opacity: 0 }}>
           Follow{' '}
           <Link
             className="h-card"

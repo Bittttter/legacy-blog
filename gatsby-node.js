@@ -94,6 +94,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         previous,
         next,
         id: post.id,
+        permalink: `https://levism.com${post.fields.slug}`,
       },
     });
   });
@@ -116,6 +117,7 @@ exports.onCreateNode = ({ node, actions, getNode, getNodes }) => {
     } = getNodes().find((n) => n.internal.type === 'Site');
 
     const slug = node.wmTarget.replace(siteUrl, '');
+    console.log(slug);
     createNodeField({ node, name: 'slug', value: slug });
   }
 };

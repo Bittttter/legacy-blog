@@ -3,7 +3,7 @@ import { jsx, Box, Heading, Text, Flex, Link } from 'theme-ui';
 import { graphql, Link as GatsbyLink } from 'gatsby';
 import Image from 'gatsby-image';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import { Tag, Layout, Feedback } from '@components';
+import { Tag, Layout } from '@components';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { mentions } from '@utils';
 // import {
@@ -84,7 +84,8 @@ export default function PostLayout({ data, pageContext }) {
     // twitterId,
   } = frontmatter;
   const { previous, next } = pageContext;
-  // const { comments, likes, reposts } = mentions(data);
+  const { comments, likes, reposts } = mentions(data);
+  console.log({ comments, likes, reposts });
 
   return (
     <Layout
@@ -129,7 +130,7 @@ export default function PostLayout({ data, pageContext }) {
         likes={likes}
         comments={comments}
         reposts={reposts}
-        twitterId={twitterId}
+        // twitterId={twitterId}
       /> */}
       <Flex
         sx={{
@@ -165,7 +166,7 @@ export default function PostLayout({ data, pageContext }) {
 }
 
 export const query = graphql`
-  query BlogPostQuery($id: String) {
+  query BlogPostQuery($id: String!, $permalink: String!) {
     site {
       siteMetadata {
         title
@@ -194,6 +195,26 @@ export const query = graphql`
       }
       fields {
         slug
+      }
+    }
+    allWebMentionEntry(filter: { wmTarget: { eq: $permalink } }) {
+      edges {
+        node {
+          type
+          mentionOf
+          wmTarget
+          wmSource
+          wmProperty
+          wmPrivate
+          wmId
+          url
+          author {
+            name
+            type
+            photo
+            url
+          }
+        }
       }
     }
   }

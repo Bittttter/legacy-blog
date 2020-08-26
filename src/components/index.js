@@ -9,3 +9,4 @@ export * from './code';
 export * from './callout';
 export * from './styled-quote';
 export * from './tip';
+export * from './feedback';
